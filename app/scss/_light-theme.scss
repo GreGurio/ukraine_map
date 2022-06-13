@@ -1,0 +1,672 @@
+.light-theme {
+
+    .theme-check {
+        .theme-check__round {
+            top: 0%;
+        }
+    }
+    //-----Scrollbar Chrome, Opera-------
+    ::-webkit-scrollbar {
+        background-color: $grey;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: $main;
+    }
+
+    .preloader {
+        background-color: $blue;
+    }
+
+    .main {
+        background-color: $grey;
+    }
+    .main__menu-icon {
+        .main__menu-line {
+            background-color: $main;
+        }
+    }
+    //------------VIGETS-------------------
+    .main__heading {
+        &-text {
+            color: $main;
+            font-weight: 700;
+        }
+    }
+    .zoom {
+        &__btn {
+            path {
+                fill: $dark;
+            }
+            &:hover {
+                path {
+                    fill: $sub;
+                }
+            }
+        }
+    }
+    .map-filters {
+        &__icon {
+            path,rect, line, mask, circle, line {
+                fill: $main;
+                stroke: $main;
+            }
+        }
+        &__heading {
+            color: $main;
+            font-weight: 700;
+        }
+        &:hover {
+            background-color: rgba(236,236,236,0.7);
+            .map-filters__header {
+                background-color: #C4C4C4;
+            }
+        }
+        &.map-filters--active {
+            background-color: rgba(236,236,236,0.7);
+            &:hover {
+                .map-filters__header {
+                    background-color: transparent; //#121212
+                }
+            }
+        }
+        &__items {
+            background-color: rgba(236,236,236,0.7); //#121212
+        }
+        &__item {
+            &-text {
+                color: $main;
+                font-weight: 700;
+            }
+            &:hover {
+                border-color: #000;
+            }
+            &.map-filters__item--active {
+                background-color: #C4C4C4;
+                border-color: transparent;
+            }
+        }
+        &.map-filters--white {
+            background-color: transparent;
+            .map-filters__items {
+                background-color: transparent;
+            }
+            .map-filters__heading {
+                color: #fff;
+            }
+            .map-filters__icon {
+                path {
+                    fill: #fff;
+                    stroke: transparent;
+                }
+            }
+            &:hover {
+                .map-filters__header {
+                    background-color: rgba(0,0,0,0.5);
+                }
+            }
+        }
+        &.map-filters--active.map-filters--white {
+            background-color: #fff;
+            .map-filters__heading {
+                color: $main;
+            }
+            .map-filters__icon {
+                path {
+                    fill: $main;
+                    stroke: transparent;
+                }
+            }
+            .map-filters__items {
+                background-color: #fff;
+            }
+            &:hover {
+                .map-filters__header {
+                    background-color: transparent;
+                }
+            }
+
+        }
+        &__item-icon {
+            path,rect, line, mask, circle, line {
+                fill: $main;
+                stroke: $main;
+            }
+        }
+    }
+    .district-sources {
+        background-color: $grey;
+        &__item-icon {
+            background-color: $dark-submain;
+            svg path {
+                fill: $grey;
+            }
+        }
+        &__item-text {
+            color: #000;
+        }
+        .slick-arrow {
+            svg line {
+                stroke: #000;
+            }
+        }
+        &__unclose {
+            svg line {
+                stroke: #000;
+            }
+        }
+    }
+    .kills {
+        background-color: rgba(236,236,236,0.7); //#121212
+        &__link {
+            background-color: rgba(236,236,236,0.7); //#121212
+            &::after {
+                background-image: url(../images/icons/more.svg);
+            }
+            &:hover {
+                background-color: $dark;
+            }
+        }
+        &__heading {
+            color: $main;
+            font-weight: 700;
+        }
+        &__number {
+            color: $red;
+            font-weight: 700;
+        }
+    }
+
+    //---------------WINDOWS---------------------
+    .kills-window {
+        background-color: #fff;
+        &__heading {
+            color: $main;
+            font-weight: 700;
+        }
+        &__line {
+            background-color: $sub;
+        }
+        &__close {
+            path, rect {
+                fill: $main;
+            }
+        }
+        &__item {
+            &:hover {
+                background-color: $grey;
+            }
+            &.kills-window__item--active {
+                background-color: $grey;
+            }
+        }
+        &__text {
+            color: $main;
+            font-weight: 700;
+            &::after {
+                background-image: url(../images/icons/more.svg);
+            }
+        }
+        &__icon {
+            svg {
+                fill: $main;
+                stroke: $main;
+            }
+            path,rect, line, mask, circle, line {
+                fill: $main;
+                stroke: $main;
+            }
+            line {
+                stroke: $main;
+                fill: $main;
+            }
+        }
+        &__number {
+            color: $red;
+            font-weight: 700;
+        }
+        &__item-info {
+            background-color: #fff;
+        }
+        &__info-text {
+            color: $main;
+            font-weight: 700;
+        }
+        &__info-link {
+            color: $main;
+            font-weight: 700;
+        }
+        &__info-img {
+            filter: brightness(1) contrast(1);
+        }
+        &__info-subtitle {
+            background: rgba(0, 0, 0, 0.5);
+            font-weight: 700;
+            color: #FFF;
+            &::before {
+                color: #FFF;
+                font-weight: 700;
+            }
+        }
+    }
+    .news {
+        &__item {
+            background-color: $grey;
+        }
+        &__item-heading {
+            color: #000;
+            font-weight: 600;
+        }
+        &__item-descr {
+            color: #000;
+            font-weight: 500;
+        }
+        &__item-source {
+            color: #000;
+            font-weight: 500;
+            &::before {
+                color: #000;
+                font-weight: 600;
+            }
+            &:hover {
+                color: #1045FF;
+                &::before {
+                    color: #1045FF;
+                }
+            }
+        }
+        &__item-img {
+            filter: brightness(1) contrast(1);
+        }
+        &__item-time {
+            color: $main;
+        }
+    }
+
+    .control-hours {
+        &__item {
+            font-weight: 700;
+            color: $main;
+        }
+        &__time {
+            color: $blue;
+        }
+    }
+    .info {
+        &__item {
+            
+            &::before {
+                background-color: $grey;
+                transition: all .3s ease-out;
+            }
+            &:hover {
+                .info__item-header {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+
+    //-------------Menu-----------------------
+    .menu {
+        background-color: #fff;
+        &__header-icon {
+            path,rect, line, mask, circle, line {
+                fill: $main;
+                stroke: $main;
+            }
+        }
+        &__heading-left, .menu__heading-center {
+            color: $main;
+            font-weight: 700;
+        }
+        &__heading-center {
+            text-align: center;
+        }
+        &__line {
+            background-color: $sub;
+        }
+        &__close {
+            path,rect, mask, circle {
+                fill: $main;
+                stroke: $main;
+            }
+            line {
+                stroke: $main;
+            }
+        }
+        //----------inner----------
+        //icons
+        &__item-icon {
+            background-color: $grey;
+            border-color: transparent;
+            &:hover {
+                background-color: $sub;
+                border-color: transparent;
+            }
+        }
+        &__icon-img {
+            line {
+                stroke: $main;
+            }
+            rect {
+                stroke: $main;
+            }
+            circle {
+                fill: $main;
+            }
+            path {
+                fill: $main;
+            }
+
+        }
+        &__icon-text-small {
+            color: $main;
+            font-weight: 700;
+        }
+        //list 
+        &__list-link, .menu__list-button {
+            color: $main;
+            &:hover {
+                background-color:  $grey;
+            }
+        }
+        &__list-text {
+            color: $main;
+            font-weight: 700;
+        }
+        &__list-icon {
+            background-color: $grey;
+        }
+        &__list-parag {
+            font-weight: 500;
+        }
+        //-------support---------
+        &__support {
+            background-color: #fff;
+        }
+        &__support-heading {
+            color: #666;
+            font-weight: 500;
+        }
+        &__support-icon {
+            background-color: $grey;
+            path {
+                fill: $main;
+            }
+            &:hover {
+                background-color: $sub;
+            }
+        }
+
+    }
+
+    .source {
+        &__item {
+            &:hover {
+            .source__item-text {
+                color: #000;
+            }
+        }
+        }
+        &__item-text {
+            color: #000;
+            font-weight: 700;
+        }
+        &__item-cover {
+            background: linear-gradient(270deg, #FFF 0%, #FFF 43.75%, rgba(255, 255, 255, 0) 100%);
+        }
+        &__item-icon {
+            background-color: $grey;
+        }
+        &__link {
+            filter: brightness(1) contrast(1);
+        }
+        &__accordion + .source__accordion {
+            border-top: 1px solid $main;
+        }
+        &__accordion-header {
+            &:hover {
+                .source__accordion-text {
+                    color: $blue;
+                }
+            }
+        }
+        &__accordion-text {
+            color: #000;
+            font-weight: 700;
+        }
+        &__accordion-arrow line {
+            stroke: #000;
+        }
+        &__accordion-icon {
+            filter: brightness(1) contrast(1);
+        }
+        &__accordion-social-link {
+            filter: brightness(1) contrast(1);
+        }
+    }
+    .source__accordion {
+        .source__item-text {
+            font-weight: 500;
+        }
+    }
+    .source__accordion.source__accordion--active {
+        .source__accordion-header {
+            background-color: $grey;
+        }
+    }
+    .source-list {
+        &__item {
+            &:hover {
+                .source-list__item-text {
+                    color: $blue;
+                }
+            }
+        }
+        &__item + .source-list__item {
+            border-color: $main;
+        }
+        &__item-text {
+            color: #000;
+            font-weight: 500;
+        }
+        &__item-arrow {
+            line {
+                stroke: #000;
+            }
+        }
+    }
+
+
+
+    //-----------Blog-----------------
+    .mini-blog {
+        color: #000;
+        h2 {
+            color: #000;
+            font-weight: 700;
+        }
+        h3 {
+            color: #000;
+            font-weight: 700;
+        }
+        p {
+            font-weight: 500;
+        }
+        //container
+        .ab-block-container {
+            background-color: $grey;    
+            p {
+                font-weight: 500;
+            }
+        }
+        //step
+        .wp-block-preformatted {
+            color: #000;
+            font-weight: 500;
+            & + .wp-block-preformatted {
+                &::before {
+                    background-image: url(../images/icons/arrow-right.svg);
+                }
+            }
+        }
+        .wp-block-button__link {
+            border-color: $red;
+            background-color: transparent;
+            color: #000;
+            font-weight: 500;
+            // custom fill
+            &::before {
+                background-color: $red;
+            }
+            &:hover {
+                color: #FFF;
+            }
+        }
+        //green link-btn
+        .is-style-outline .wp-block-button__link {
+            border-color: $green;
+            &::before {
+                background-color: $green;
+            }
+            &:hover {
+                color: #FFF;
+            }
+        }
+    }
+
+    //------------Map-----------------------
+    .main__map {
+        &:hover {
+            svg {
+                stroke: $light-blue;
+                stroke-width: 1px;
+            }
+            .main__image svg {
+                stroke: none;
+            }
+        }
+    }
+    .main__district {
+        svg {
+            fill: $blue;
+            stroke: $blue;
+            stroke-width: 2px;
+        }
+        &::after {
+            color: $text-blue;
+            font-weight: 800;
+        }
+        &:hover {
+            &::after {
+                color: #FFF;
+            }
+        }
+    }
+    .main__image {
+        svg {
+            fill: #2A9DF0;
+        }
+    }
+    .big-city {
+        background-color: #fff;
+        &::after {
+            color: #FFF;
+            font-weight: 700;
+        }
+    }
+    .small-city {
+        &::after {
+            color: #FFF;
+            font-weight: 700;
+        }
+    }
+    
+    //-----------active-----------
+    .main__map.big-cities--active {
+        .small-city {
+            background-color: #2A9DF0;
+            &::after {
+                color: #2A9DF0;
+            }
+        }
+    }
+    //-----------Borders---------------------
+    .main__map.borders--active {
+        .main__district {
+            path {
+                stroke: #93AAFF;
+                stroke-width: 1px;
+            }
+        }
+    }
+    //--------------------District-------------------------------------------------------
+    .main__map .main__district.main__district--active {
+        path {
+            fill: #FFF;
+            stroke: none;
+        }
+        &::after {
+            color: #FFF;
+        }
+        .big-city {
+            background-color:  $red;
+            &::after {
+                color: $red;
+            }
+        }
+        .small-city {
+            &::after {
+                color: #000;
+            }
+            &.black {
+                &::after {
+                    color: #CECECE;
+                }
+            }
+            &.grey {
+                &::after {
+                    color: #CECECE;
+                }
+            }
+        }
+    }
+     @media(max-width: 500px) {
+        .main .map-filters {
+            background-color: #FFF;
+        }
+        .main .map-filters.map-filters--active .map-filters__items {
+            background-color: rgba(255,255,255,.8);
+        }
+        .main .map-filters.map-filters--active  {
+            background-color: rgba(255,255,255,.8);
+        }
+        .kills {
+            &__heading {
+                color: #FFF;
+            }
+            &__number {
+                color: #FF4F4F;
+            }
+            &__link {
+                background-color: rgba(0,0,0,0.5);
+                &::after {
+                    background-image: url(../images/icons/more-white.svg);
+                }
+            }
+        }
+        
+        
+    }   
+    @media(max-width: 385px) {
+        .menu__item-icon {
+            background-color: transparent;
+        }
+        .menu__icon-img {
+            background-color: $grey;
+            border-color: transparent;
+        }
+        
+    }
+}

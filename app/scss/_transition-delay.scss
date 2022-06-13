@@ -1,0 +1,172 @@
+.anim-1 {
+    transition-delay: .03s;
+}
+.anim-2 {
+    transition-delay: .06s;
+}
+.anim-3 {
+    transition-delay: .09s;
+}
+.anim-4 {
+    transition-delay: .12s;
+}
+.anim-5 {
+    transition-delay: .15s;
+}
+.anim-6 {
+    transition-delay: .18s;
+}
+.anim-7 {
+    transition-delay: .21s;
+}
+.anim-8 {
+    transition-delay: .24s;
+}
+.anim-9 {
+    transition-delay: .27s;
+}
+.anim-10 {
+    transition-delay: .3s;
+}
+.anim-11 {
+    transition-delay: .33s;
+}
+.anim-12 {
+    transition-delay: .36s;
+}
+.anim-13 {
+    transition-delay: .39s;
+}
+.anim-14 {
+    transition-delay: .42s;
+}
+.anim-15 {
+    transition-delay: .45s;
+}
+.anim-16 {
+    transition-delay: .48s;
+}
+.anim-17 {
+    transition-delay: .51s;
+}
+.anim-18 {
+    transition-delay: .54s;
+}
+.anim-19 {
+    transition-delay: .57s;
+}
+.anim-20 {
+    transition-delay: .6s;
+}
+.anim-21 {
+    transition-delay: .63s;
+}
+.anim-22 {
+    transition-delay: .66s;
+}
+.anim-23 {
+    transition-delay: .69s;
+}
+.anim-24 {
+    transition-delay: .72s;
+}
+.anim-25 {
+    transition-delay: .75s;
+}
+.anim-26 {
+    transition-delay: .80s;
+}
+.anim-27 {
+    transition-delay: .83s;
+}
+.anim-28 {
+    transition-delay: .88s;
+}
+.anim-29 {
+    transition-delay: .95s;
+}
+.anim-30 {
+    transition-delay: 1s;
+}
+
+
+.main__district {
+    &.zakarpatska svg path {
+        transition: fill .3s ease 1s, stroke .3s ease 1s, transform .3s ease 0s;
+    }
+    &.lvivska svg path {
+        transition: fill .3s ease .9s, stroke .3s ease .9s, transform .3s ease 0s;
+    }
+    &.volynska svg path {
+        transition: fill .3s ease .8s, stroke .3s ease .8s, transform .3s ease 0s;
+    }
+    &.ivano-frankivska svg path {
+        transition: fill .3s ease .69s, stroke .3s ease .69s, transform .3s ease 0s;
+    }
+    &.ternopilska svg path {
+        transition: fill .3s ease .66s, stroke .3s ease .66s, transform .3s ease 0s;
+    }
+    &.chernivetska svg path {
+        transition: fill .3s ease .63s, stroke .3s ease .63s, transform .3s ease 0s;
+    }
+    &.rivnenska svg path {
+        transition: fill .3s ease .6s, stroke .3s ease .6s, transform .3s ease 0s;
+    }
+    &.khmelnytska svg path {
+        transition: fill .3s ease .57s, stroke .3s ease .57s, transform .3s ease 0s;
+    }
+    &.zhytomyrska svg path {
+        transition: fill .3s ease .54s, stroke .3s ease .54s, transform .3s ease 0s;
+    }
+    &.vinnytska svg path {
+        transition: fill .3s ease .51s, stroke .3s ease .51s, transform .3s ease 0s;
+    }
+    &.kyivska svg path {
+        transition: fill .3s ease .48s, stroke .3s ease .48s, transform .3s ease 0s;
+    }
+    &.kyiv svg path {
+        transition: fill .3s ease .45s, stroke .3s ease .45s, transform .3s ease 0s;
+    }
+    &.odeska svg path {
+        transition: fill .3s ease .42s, stroke .3s ease .42s, transform .3s ease 0s;
+    }
+    &.cherkaska svg path {
+        transition: fill .3s ease .39s, stroke .3s ease .39s, transform .3s ease 0s;
+    }
+    &.kirovogradska svg path {
+        transition: fill .3s ease .36s, stroke .3s ease .36s, transform .3s ease 0s;
+    }
+    &.mykolayivska svg path {
+        transition: fill .3s ease .33s, stroke .3s ease .33s, transform .3s ease 0s;
+    }
+    &.chernigivska svg path {
+        transition: fill .3s ease .3s, stroke .3s ease .3s, transform .3s ease 0s;
+    }
+    &.sumska svg path {
+        transition: fill .3s ease .27s, stroke .3s ease .27s, transform .3s ease 0s;
+    }
+    &.poltavska svg path {
+        transition: fill .3s ease .24s, stroke .3s ease .24s, transform .3s ease 0s;
+    }
+    &.dniprovska svg path {
+        transition: fill .3s ease .21s, stroke .3s ease .21s, transform .3s ease 0s;
+    }
+    &.khersonska svg path {
+        transition: fill .3s ease .18s, stroke .3s ease .18s, transform .3s ease 0s;
+    }
+    &.krym svg path {
+        transition: fill .3s ease .15s, stroke .3s ease .15s, transform .3s ease 0s;
+    }
+    &.kharkivska svg path {
+        transition: fill .3s ease .12s, stroke .3s ease .12s, transform .3s ease 0s;
+    }
+    &.zaporizka svg path {
+        transition: fill .3s ease .09s, stroke .3s ease .09s, transform .3s ease 0s;
+    }
+    &.donetska svg path {
+        transition: fill .3s ease .06s, stroke .3s ease .06s, transform .3s ease 0s;
+    }
+    &.lughanska svg path {
+        transition: fill .3s ease .03s, stroke .3s ease .03s, transform .3s ease 0s;
+    }
+}

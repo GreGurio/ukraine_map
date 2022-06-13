@@ -1,0 +1,105 @@
+.pervomaysk {
+    top: 16px;
+    left: 45px;
+    &::after {
+        content: "Первомайськ";
+    }
+}
+.kryve-ozero {
+    top: 25px;
+    left: 10px;
+    &::after {
+        content: "Криве озеро";
+    }
+}
+.bratske {
+    top: 33px;
+    left: 88px;
+    &::after {
+        content: "Братське";
+    }
+}
+.uzhnoukrainsk {
+    top: 36px;
+    left: 65px;
+    &::after {
+        content: "Южноукраїнськ";
+    }
+}
+.kazanka {
+    top: 41px;
+    left: 179px;
+    &::after {
+        content: "Казанка";
+    }
+}
+.yelanets {
+    top: 51px;
+    left: 111px;
+    &::after {
+        content: "Єланець";
+    }
+}
+.novyy-buh {
+    top: 51px;
+    left: 154px;
+    &::after {
+        content: "Новий Буг";
+    }
+}
+.voznesensk {
+    top: 60px;
+    left: 83px;
+    &::after {
+        content: "Вознесенськ";
+    }
+}
+.bashtanka {
+    top: 77px;
+    left: 145px;
+    &::after {
+        content: "Баштанка";
+    }
+}
+.veselynove {
+    top: 84px;
+    left: 72px;
+    &::after {
+        content: "Веселинове";
+    }
+}
+.bereznehuvate {
+    top: 86px;
+    left: 172px;
+    &::after {
+        content: "Березнегувате";
+    }
+}
+.nova-odesa {
+    top: 93px;
+    left: 102px;
+    &::after {
+        content: "Нова Одеса";
+    }
+}
+.yavkyne {
+    top: 92px;
+    left: 154px;
+    &::after {
+        content: "Явкине";
+    }
+}
+.snihurivka {
+    top: 111px;
+    left: 167px;
+    &::after {
+        content: "Снігурівка";
+    }
+}
+.ochakiv {
+    top: 155px;
+    left: 88px;
+    &::after {
+        content: "Очаків";
+    }
+}

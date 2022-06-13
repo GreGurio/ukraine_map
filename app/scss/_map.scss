@@ -1,0 +1,533 @@
+//-------Dimmer-------------------
+.dimmer {
+    width: 200%;
+    min-height: 200vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+    pointer-events: visible;
+    transition: all .3s;
+    &.dimmer--active {
+        opacity: 1;
+        z-index: 3;
+    }
+}
+
+.map__wrapper {
+    width: auto;
+    overflow: visible;
+    height: auto;
+}
+        
+.main {
+    &__map {
+        overflow: visible;
+        position: relative;
+        &:hover {
+            svg {
+                stroke: $light-blue;
+                stroke-width: 1px;
+            }
+            .kyiv {
+                stroke: $blue;
+                stroke-width: 2px;    
+            }
+            .main__image svg {
+                stroke:none;
+            }
+            
+        }
+    }
+    &__district {
+        pointer-events: none;
+        position: absolute;
+        svg {
+            fill: $blue;
+            stroke: $blue;
+            stroke-width: 2px;
+            overflow: visible;
+            transition: all .3s;
+            path {
+                pointer-events: all;
+                cursor: pointer;
+            }
+        }
+        &:hover {
+            svg path, .fighting-zone, .big-city, .small-cities {
+                transform: translate(-10px, 10px);
+            }
+            z-index: 1;
+        }
+        &::after {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: $text-blue;
+            font-size: 13px;
+            font-weight: 800;
+            opacity: 0;
+            transition: all .3s;
+            pointer-events: none;
+        }
+        &:hover {
+            transform: translate(0%, 0%);
+            &::after {
+                color: #FFF;
+            }
+        }
+        &.kyiv {
+            pointer-events:none;
+        }
+    }
+    // Second Ukraine behind
+    &__image {
+        svg {
+            fill: #2A9DF0;
+            filter: drop-shadow(7px 6px 11px rgba(0, 0, 0, 0.25));
+        }
+    }
+}
+@import 'districts';
+
+
+.big-city {
+    opacity: 0;
+    z-index: 2;
+    height: 10px;
+    width: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    transition: all .3s;  
+    transform: translateX(30%);   
+    &::after {
+        position: absolute;
+        left: 15px;
+        bottom: 0;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        color: #FFF;
+        text-shadow: 0px 0px 13px rgba(0, 0, 0, 0.35);
+        transition: all .3s;
+        z-index: 500;
+    }
+    &.bottom {
+        &::after {
+            top: 0;
+            bottom: auto;
+        }
+    }
+    &.top {
+        &::after {
+            top: auto;
+            bottom: 15px;
+            transform: translateX(-50%);
+            left: auto;
+            right: auto;
+        }
+    }
+}
+@import 'big-cities';
+
+
+
+.small-cities {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: all .3s;
+}
+.small-city {
+    background-color: $lime;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    position: absolute; 
+    z-index: 2;
+    opacity: 0;
+    transition: all .3s;
+    &::after {
+        position: absolute;
+        color: #FFF;
+        font-weight: 700;
+        font-size: 6px;  
+        left: 150%;
+        bottom: 50%;
+        transform: translateY(50%);
+        transition: all .3s;
+        white-space: nowrap;
+    }
+    &.top {
+        &::after {
+            left: auto;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    &.bottom {
+        &::after {
+            top: 100%;
+            bottom: auto;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    &.left {
+        &::after {
+            left: auto;
+            right: 150%;
+            bottom: 50%;
+            transform: translateY(50%);
+        }
+    }
+    &.top-left {
+        &::after {
+            bottom: 100%;
+            right: 100%;
+            left: auto;
+            transform: none;
+        }
+    }
+    &.top-right {
+        &::after {
+            bottom: 100%;
+            left: 100%;
+            transform: none;
+        }
+    }
+    &.bottom-left {
+        &::after {
+            top: 100%;
+            right: 100%;
+            bottom: auto;
+            left: auto;
+            transform: none;
+        }
+    }
+    &.bottom-right {
+        &::after {
+            top: 100%;
+            left: 100%;
+            bottom: auto;
+            right: auto;
+            transform: none;
+        }
+    }
+    &.black {
+        &::after {
+            color: #000;
+        }
+    }
+    &.big {
+        &::after {
+            font-size: 10px;
+        }
+    }
+    &.word-wrap {
+        &::after {
+            white-space: normal;
+        }
+    }
+}
+@import 'small-cities';
+
+
+
+.fighting-zone {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-repeat: no-repeat;
+    transition: all .3s;
+    opacity: 0;
+}
+
+.fired {
+    &::before {
+        transition: all .3s;
+        content: "";
+        width: 23px;
+        height: 23px;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        transform: translate(-20%, -20%);
+        position: absolute;
+        background-image: url(../images/icons/fire.svg);
+    }
+}
+
+.attack-zones {
+    position: absolute;
+    pointer-events:none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: all .3s;
+    img {
+        max-width:none;
+    }
+}
+.defend-zones {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    transition: all .3s;
+    img {
+        max-width:none;
+    }
+}
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////-----------------------ACTIVE----------------------------///////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//--------------------District-------------------------------------------------------
+.main__map .main__district.main__district--active {
+    z-index: 1000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(3);
+    transition-delay: 0ms;
+    
+    path {
+        fill: #FFF;
+        stroke: none;
+        &:hover {
+            transform: none;
+        }
+        transition-delay: 0ms;
+    }
+    svg:hover {
+        transform: none;
+    }
+    &:hover {
+        svg path, .fighting-zone, .big-city, .small-cities {
+                transform: translate(0, 0);
+            }
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        right: -2000px;
+        top: -2000px;
+        width: 4000px;
+        height: 4000px;
+        background-color: #000;
+        opacity: 0.5;
+        pointer-events: visible;
+        z-index: -1;
+        display: none;
+    }
+    &::after {
+        opacity: 1;
+        left: 54%;
+        bottom: 50%;
+        top: auto;
+        right: auto;
+        color: #FFF;
+        font-size: 55px;
+        transform: translate(0%, 0%) scale(0.3);
+    }
+    .big-city{
+        background-color: $red;
+        z-index: 5;
+        transform: translateX(0);
+        &::after {
+            color: $red;
+        }
+    }
+    .small-city {
+        &::after {
+            color: #000;
+        }
+        &.black {
+            &::after {
+                color: #CECECE;
+            }
+        }
+        &.grey {
+            &::after {
+                color: #CECECE;
+            }
+        }
+    }
+    &.news--active {
+        left: 15%;
+    }
+}
+//----------------Kyiv-------------------
+.main__map .kyiv.main__district--active {
+    left: 47%;
+    z-index: 3;
+    path {
+        stroke: #FFF;
+        stroke-width: 5px;
+    }
+}
+
+//----------------Zoom--------------------
+
+.map__wrapper.zoom-1, .map__wrapper.zoom-2 {
+    width: 100%;
+    height: 100vh;  
+    overflow: scroll;
+}
+
+.zoom-1 .main__district, .zoom-2 .main__district {
+    &:hover {
+        svg path, .fighting-zone, .big-city, .small-cities {
+            transform: translate(0px, 0px);
+        }
+    }
+}
+
+.zoom-1 .main__map {
+    width: 100%;
+    transform: scale(2) translate(27%, 30%);
+    display: inline-flex;
+    .main__district.main__district--active {
+        top: auto;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        transform: scale(1.3);
+        position: fixed;
+    }
+}
+.zoom-2 .main__map {
+    width: 100%;
+    transform: scale(3) translate(40%, 40%);
+    display: inline-flex;
+    .main__district.main__district--active {
+        top: auto;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        transform: scale(1.3);
+        position: fixed;
+    }
+}
+
+
+//----------Big cities---------------
+.main__map.big-cities--active {
+    .big-city {
+        opacity: 1;
+    }
+    &:hover .main__district::after {
+        display: none;
+    }
+    &:hover .main__district.main__district--active::after {
+        display: block;
+    }
+    .small-city {
+        background-color: #2A9DF0;
+        &::after {
+            color: #2A9DF0;
+        }
+    }
+    .main__district:hover {
+        .big-city {
+            transition-delay: 0s;
+        }
+    }
+}
+
+//--------Small cities-----------
+.main__map.small-cities--active {
+    .small-city {
+        opacity: 1;
+    }
+    .big-city {
+        &::after {
+            font-size: 14px;
+        }
+    }
+}
+
+//----------Fired cities------------------
+.main__map.fired-cities--active {
+    .fired {
+        opacity: 1;
+    }
+    .fired::before {
+        opacity: 1;
+        transform: translate(-40%, -40%);
+    }
+}
+
+//----------Districts----------------------
+.main__map.districts--active {
+    &:hover {
+        .main__district::after {
+            opacity: 1;
+        }
+    }
+}
+
+
+//-----------Borders---------------------
+.main__map.borders--active {
+    .main__district {
+        path {
+            stroke: #93AAFF;
+        }
+    }
+}
+
+
+//---------Attack zones--------------------
+.main__map.attack-zones--active {
+    .attack-zones {
+        opacity: 1;
+    }
+}
+
+//-----------Defend zones-----------------
+.main__map.defend-zones--active {
+    .defend-zones {
+        opacity: 1;
+    }
+}
+
+//-----------Occupied zones----------
+.main__map.occupied--active {
+    .fighting-zone {
+        opacity: 1;
+    }
+    .kherson {
+        background-color: #FF3939;
+        &::after {
+            color: #FF3939;
+        }
+    }
+}
+
+//------------Safe zones--------------------
+@import 'safe-zones';
+
+
+
+

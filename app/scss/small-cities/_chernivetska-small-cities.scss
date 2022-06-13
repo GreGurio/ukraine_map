@@ -1,0 +1,35 @@
+.storozhynets {
+    top: 51px;
+    left: 46px;
+    &::after {
+        content: "Сторожинець";
+    }
+}
+.hotyn {
+    top: 15px;
+    left: 101px;
+    &::after {
+        content: "Хотин";
+    }
+}
+.kelmentsy {
+    top: 24px;
+    left: 127px;
+    &::after {
+        content: "Кельменці";
+    }
+}
+.novodnistrovsk {
+    top: 7px;
+    left: 167px;
+    &::after {
+        content: "Новодністровськ";
+    }
+}
+.sokyryany {
+    top: 20px;
+    left: 167px;
+    &::after {
+        content: "Сокиряни";
+    }
+}

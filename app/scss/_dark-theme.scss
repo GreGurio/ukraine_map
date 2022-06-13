@@ -1,0 +1,624 @@
+@import 'dark-theme-media';
+
+.dark-theme {
+
+    //-----Scrollbar Chrome, Opera-------
+    ::-webkit-scrollbar {
+        background-color: $dark-main;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: $dark-text;
+    }
+
+    .preloader {
+        background-color: $dark-main;
+    }
+
+    .main {
+        background-color: $dark-main;
+    }
+    .main__menu-icon {
+        .main__menu-line {
+            background-color: $dark-text;
+        }
+    }
+    //------------VIGETS-------------------
+    .main__heading {
+        &-text {
+            color: $dark-text;
+            font-weight: 500;
+        }
+    }
+    .zoom {
+        &__btn {
+            path {
+                fill: $dark-submain;
+            }
+            &:hover {
+                path {
+                    fill: $dark-grey;
+                }
+            }
+        }
+    }
+    .district-sources {
+        background-color: $dark-submain;
+        &__item-icon {
+            background-color: $dark-text;
+            svg path {
+                fill: $dark-submain;
+            }
+        }
+        &__item-text {
+            color: $dark-text;
+        }
+        .slick-arrow {
+            svg line {
+                stroke: $dark-text;
+            }
+        }
+        &__unclose {
+            svg line {
+                stroke: $dark-text;
+            }
+        }
+    }
+    .map-filters {
+        &__icon {
+            path,rect, line, mask, circle, line {
+                fill: $dark-text;
+                stroke: $dark-text;
+            }
+        }
+        &__heading {
+            color: $dark-text;
+            font-weight: 500;
+        }
+        &:hover {
+            background-color: transparent;
+            .map-filters__header {
+                background-color: $dark-submain;
+            }
+        }
+        &.map-filters--active {
+            background-color: rgba(18,18,18,0.7);
+            &:hover {
+                .map-filters__header {
+                    background-color: rgba(18,18,18,0.7); //#121212
+                }
+            }
+        }
+        &__items {
+            background-color: transparent;
+            background-color: rgba(18,18,18,0.7); //#121212
+        }
+        &__item {
+            &-text {
+                color: $dark-text;
+                font-weight: 500;
+            }
+            &:hover {
+                border-color: $dark-text;
+            }
+            &.map-filters__item--active {
+                background-color: $dark-submain;
+                border-color: transparent;
+            }
+        }
+        &.map-filters--active.map-filters--white {
+            background-color: rgba(18,18,18,0.7);
+            .map-filters__heading {
+                color: $dark-text;
+            }
+            .map-filters__icon {
+                path {
+                    fill: $dark-text;
+                }
+            }
+            .map-filters__items {
+                background-color: rgba(18,18,18,0.7);
+            }
+        }
+        &__item-icon {
+            path,rect, line, mask, circle, line {
+                fill: $dark-text;
+                stroke: $dark-text;
+            }
+        }
+    }
+    .kills {
+        background-color: rgba(18,18,18,0.7); //#121212
+        &__link {
+            background-color: rgba(18,18,18,0.7); //#121212
+            &::after {
+                background-image: url(../images/icons/more-white.svg);
+            }
+            &:hover {
+                background-color: $dark-submain;
+            }
+        }
+        &__heading {
+            color: $dark-text;
+            font-weight: 500;
+        }
+        &__number {
+            color: $dark-red;
+            font-weight: 500;
+        }
+    }
+
+    //---------------WINDOWS---------------------
+    .kills-window {
+        background-color: $dark-submain;
+        &__heading {
+            color: $dark-text;
+            font-weight: 500;
+        }
+        &__line {
+            background-color: $dark-text;
+        }
+        &__close {
+            path, rect {
+                fill: $dark-text;
+            }
+        }
+        &__item {
+            &:hover {
+                background-color: $dark-grey;
+            }
+            &.kills-window__item--active {
+                background-color: $dark-grey;
+            }
+        }
+        &__text {
+            color: $dark-text;
+            font-weight: 500;
+            &::after {
+                background-image: url(../images/icons/more-white.svg);
+            }
+        }
+        &__icon {
+            path,rect, line, mask, circle, line {
+                fill: $dark-text;
+                stroke: $dark-text;
+            }
+        }
+        &__number {
+            color: $dark-red;
+            font-weight: 500;
+        }
+        &__item-info {
+            background-color: $dark-grey;
+        }
+        &__info-text {
+            color: $dark-text;
+            font-weight: 300;
+        }
+        &__info-link {
+            color: $dark-text;
+            font-weight: 500;
+        }
+        &__info-img {
+            filter: brightness(0.85) contrast(1.2);
+        }
+        &__info-subtitle {
+            background: rgba(0, 0, 0, 0.7);
+            font-weight: 300;
+            color: $dark-text;
+            &::before {
+                color: $dark-text;
+                font-weight: 500;
+            }
+        }
+    }
+    .news {
+        &__item {
+            background-color: $dark-main;
+        }
+        &__item-heading {
+            color: $dark-text;
+            font-weight: 500;
+        }
+        &__item-descr {
+            color: $dark-text;
+            font-weight: 300;
+        }
+        &__item-source {
+            color: $dark-text;
+            font-weight: 300;
+            &::before {
+                color: $dark-text;
+                font-weight: 500;
+            }
+            &:hover {
+                color: $dark-blue;
+                &::before {
+                    color: $dark-blue;
+                }
+            }
+        }
+        &__item-img {
+            filter: brightness(0.9) contrast(1.2);
+        }
+        &__item-time {
+            color: $dark-text;
+        }
+    }
+
+    .control-hours {
+        &__item {
+            font-weight: 500;
+            color: $dark-text;
+        }
+        &__time {
+            color: $dark-blue;
+        }
+    }
+    .info {
+        &__item {
+            
+            &::before {
+                background-color: $dark-grey;
+                transition: all .3s ease-out;
+            }
+            &:hover {
+                .info__item-header {
+                    background-color: $dark-grey;
+                }
+            }
+        }
+    }
+
+    //-------------Menu-----------------------
+    .menu {
+        background-color: $dark-submain;
+        &__header-icon {
+            path,rect, line, mask, circle, line {
+                fill: $dark-text;
+                stroke: $dark-text;
+            }
+        }
+        &__heading-left, .menu__heading-center {
+            color: $dark-text;
+            font-weight: 500;
+        }
+        &__heading-center {
+            text-align: center;
+        }
+        &__line {
+            background-color: $dark-text;
+        }
+        &__close {
+            path,rect, mask, circle {
+                fill: $dark-text;
+                stroke: $dark-text;
+            }
+            line {
+                stroke: $dark-text;
+            }
+        }
+        //----------inner----------
+        //icons
+        &__item-icon {
+            background-color: transparent;
+            border: 1px solid $dark-text;
+            &:hover {
+                background-color: $dark-grey;
+                border-color: $dark-grey;
+            }
+        }
+        &__icon-img {
+            line {
+                stroke: $dark-text;
+            }
+            rect {
+                stroke: $dark-text;
+            }
+            circle {
+                fill: $dark-text;
+            }
+            path {
+                fill: $dark-text;
+            }
+
+        }
+        &__icon-text-small {
+            color: $dark-text;
+            font-weight: 500;
+        }
+        //list 
+        &__list-link, .menu__list-button {
+            color: $dark-text;
+            &:hover {
+                background-color: $dark-grey;
+                .menu__list-text {
+                    
+                }
+            }
+        }
+        &__list-text {
+            color: $dark-text;
+            font-weight: 500;
+        }
+        &__list-icon {
+            background-color: $dark-grey;
+        }
+        &__list-parag {
+            font-weight: 300;
+        }
+        //-------support---------
+        &__support {
+            background-color: $dark-submain;
+        }
+        &__support-heading {
+            color: $dark-text;
+            font-weight: 300;
+        }
+        &__support-icon {
+            background-color: $dark-grey;
+            path {
+                fill: $dark-text;
+            }
+            &:hover {
+                background-color: $dark-main;
+            }
+        }
+
+    }
+
+
+    .source {
+        &__item {
+            &:hover {
+            .source__item-text {
+                color: $dark-blue;
+            }
+        }
+        }
+        &__item-text {
+            color: $dark-text;
+            font-weight: 500;
+        }
+        &__item-cover {
+            background: linear-gradient(270deg, $dark-submain 0%, $dark-submain 43.75%, rgba(255, 255, 255, 0) 100%);
+        }
+        &__item-icon {
+            background-color: $dark-grey;
+        }
+        &__link {
+            filter: brightness(0.8) contrast(1.1);
+        }
+        &__accordion + .source__accordion {
+            border-top: 1px solid $dark-text;
+        }
+        &__accordion-header {
+            &:hover {
+                .source__accordion-text {
+                    color: $dark-blue;
+                }
+            }
+        }
+        &__accordion-text {
+            color: $dark-text;
+            font-weight: 500;
+        }
+        &__accordion-arrow line {
+            stroke: $dark-text;
+        }
+        &__accordion-icon {
+            filter: brightness(0.9) contrast(1.1);
+        }
+        &__accordion-social-link {
+            filter: brightness(0.8) contrast(1.1);
+        }
+    }
+    .source__accordion {
+        .source__item-text {
+            font-weight: 300;
+        }
+    }
+    .source__accordion.source__accordion--active {
+        .source__accordion-header {
+            background-color: $dark-main;
+        }
+    }
+    .source-list {
+        &__item {
+            &:hover {
+                .source-list__item-text {
+                    color: $dark-blue;
+                }
+            }
+        }
+        &__item + .source-list__item {
+            border-color: $dark-text;
+        }
+        &__item-text {
+            color: $dark-text;
+            font-weight: 500;
+        }
+        &__item-arrow {
+            line {
+                stroke: $dark-text;
+            }
+        }
+    }
+
+    //-----------Blog-----------------
+    .mini-blog {
+        color: $dark-text;
+        h2 {
+            color: $dark-text;
+            font-weight: 500;
+        }
+        h3 {
+            color: $dark-text;
+            font-weight: 500;
+        }
+        p {
+            font-weight: 300;
+        }
+        //container
+        .ab-block-container {
+            background-color: $dark-main;    
+            p {
+                font-weight: 300;
+            }
+        }
+        //step
+        .wp-block-preformatted {
+            color: $dark-text;
+            font-weight: 300;
+            & + .wp-block-preformatted {
+                &::before {
+                    background-image: url(../images/icons/arrow-right-white.svg);
+                }
+            }
+        }
+        .wp-block-button__link {
+            border-color: $dark-red;
+            background-color: transparent;
+            color: $dark-text;
+            font-weight: 300;
+            // custom fill
+            &::before {
+                background-color: $dark-red;
+            }
+        }
+        //green link-btn
+        .is-style-outline .wp-block-button__link {
+            border-color: $green;
+            &::before {
+                background-color: $green;
+            }
+        }
+    }
+
+    //------------Map-----------------------
+    .dimmer {
+
+    }
+    .main__map {
+        &:hover {
+            svg {
+                stroke: $dark-text;
+                stroke-width: 0.5px;
+            }
+            .main__image svg {
+                stroke: none;
+            }
+        }
+    }
+    .main__district {
+        svg {
+            fill: $dark-submain;
+            stroke: $dark-submain;
+            stroke-width: 1.5px;
+        }
+        &::after {
+            color: $dark-text;
+            font-weight: 500;
+        }
+        &:hover {
+            &::after {
+                color: $dark-text;
+            }
+        }
+    }
+    .main__image {
+        svg {
+            fill: #000;
+        }
+    }
+    .big-city {
+        background-color: $dark-text;
+        &::after {
+            color: $dark-text;
+            font-weight: 500;
+        }
+    }
+    .small-city {
+        &::after {
+            color: $dark-text;
+            font-weight: 300;
+        }
+    }
+    
+    //-----------active-----------
+    .main__map.big-cities--active {
+        .small-city {
+            background-color: $dark-blue;
+            &::after {
+                color: $dark-blue;
+            }
+        }
+    }
+    //-----------Borders---------------------
+    .main__map.borders--active {
+        .main__district {
+            path {
+                stroke: $dark-text;
+                stroke-width: 0.5px;
+            }
+        }
+    }
+    //--------------------District-------------------------------------------------------
+    .main__map .main__district.main__district--active {
+        path {
+            fill: $dark-grey;
+            stroke: none;
+        }
+        &::after {
+            color: $dark-text;
+        }
+        .big-city {
+            background-color: $dark-red;
+            &::after {
+                color: $dark-red;
+            }
+        }
+        .small-city {
+            &::after {
+                color: $dark-text;
+            }
+            &.black {
+                &::after {
+                    color: $dark-text;
+                }
+            }
+            &.grey {
+                &::after {
+                    color: $dark-text;
+                }
+            }
+        }
+    }
+}
+
+
+@media(max-width: 500px) {
+    .dark-theme {
+        .main .map-filters {
+            background-color: $dark-grey;
+        }
+        .main .map-filters.map-filters--active .map-filters__items {
+            background-color: rgba(18,18,18,.8);
+        }
+        .main .map-filters.map-filters--active  {
+            background-color: rgba(18,18,18,.8);
+        }
+        
+    }
+    }   
+    @media (max-width: 385px) {
+        .dark-theme {
+        .menu__item-icon {
+            border-color: transparent;
+        }
+        .menu__icon-img {
+            background-color: transparent;
+            border: 1px solid $dark-text;
+        }
+    }
+    }

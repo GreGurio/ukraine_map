@@ -1,0 +1,7650 @@
+@charset "UTF-8";
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+ul,
+ol {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+dl,
+dd {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+body {
+  font-family: "Montserrat";
+  color: #232323;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  /* фоновый цвет */
+  background: #000E40;
+  z-index: 2000;
+}
+
+.preloader path {
+  fill: #FFF;
+}
+
+.preloader__image {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  margin-top: -35px;
+  margin-left: -35px;
+  text-align: center;
+  -webkit-animation: preloader-rotate 2s infinite linear;
+          animation: preloader-rotate 2s infinite linear;
+}
+
+@-webkit-keyframes preloader-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes preloader-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.loaded_hiding .preloader {
+  -webkit-transition: 0.3s opacity;
+  transition: 0.3s opacity;
+  opacity: 0;
+}
+
+.loaded .preloader {
+  display: none;
+}
+
+.dimmer {
+  width: 200%;
+  min-height: 100vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: visible;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.dimmer.dimmer--active {
+  opacity: 1;
+  z-index: 3;
+}
+
+.menu {
+  z-index: 10010;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  bottom: 30px;
+  background-color: #fff;
+  border-radius: 17px;
+  width: 500px;
+  -webkit-box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.25);
+  padding: 30px 22px 30px 22px;
+  -webkit-transform: translateX(200%);
+          transform: translateX(200%);
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.menu-big {
+  width: 670px;
+}
+
+.menu__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu__header-icon {
+  margin-right: 30px;
+  height: 44px;
+}
+
+.menu__heading-left {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 44px;
+  text-align: left;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.menu__heading-center {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 44px;
+  text-align: center;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.menu__line {
+  height: 1px;
+  background-color: #AEAEAE;
+  margin-bottom: 20px;
+}
+
+.menu__items-list {
+  overflow-y: scroll;
+  padding-right: 10px;
+  height: 80vh;
+}
+
+.menu__list-item {
+  margin-bottom: 20px;
+}
+
+.menu__list-link, .menu .menu__list-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  border-radius: 17px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.menu__list-link:hover, .menu .menu__list-button:hover {
+  background-color: #ECECEC;
+}
+
+.menu__list-link:hover .menu__list-text, .menu .menu__list-button:hover .menu__list-text {
+  color: #2A9DF0;
+}
+
+.menu__list-button {
+  border: none;
+  outline: none;
+  background-color: #fff;
+}
+
+.menu__list-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.menu__list-icon {
+  min-width: 60px;
+  height: 60px;
+  border-radius: 19px;
+  background-color: #ECECEC;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 17px;
+}
+
+.menu__list-text {
+  text-align: left;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  color: #232323;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.menu__list-parag {
+  font-weight: 500;
+  text-align: left;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.menu__list-parag + .menu__list-parag {
+  margin-top: 22px;
+}
+
+.menu__list-wrapper {
+  padding-left: 77px;
+}
+
+.menu__item-icon {
+  background-color: #ECECEC;
+  border-radius: 30px;
+  height: 140px;
+  width: 140px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.menu__item-icon:hover {
+  background-color: #AEAEAE;
+}
+
+.menu__item-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.menu__icon-img {
+  margin-bottom: 15px;
+}
+
+.menu__icon-text {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  color: #232323;
+  text-align: center;
+  text-decoration: none;
+}
+
+.menu__icon-text-small {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  color: #232323;
+  text-align: center;
+  text-decoration: none;
+}
+
+.menu__items-icons {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  overflow-y: scroll;
+  max-height: 80vh;
+}
+
+.menu__close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+}
+
+.menu__support {
+  position: absolute;
+  bottom: 22px;
+}
+
+.menu__support-heading {
+  color: #666;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 20px;
+}
+
+.menu__support-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.menu__support-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #ECECEC;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.menu__support-icon + .menu__support-icon {
+  margin-left: 30px;
+}
+
+.menu__support-icon path {
+  color: #232323;
+}
+
+.menu__support-icon:hover {
+  background-color: #AEAEAE;
+}
+
+.menu__support-icon:hover .telegram-icon path {
+  fill: #0088cc;
+}
+
+.menu__support-icon:hover .mail-icon path {
+  fill: #ff4c4c;
+}
+
+.menu__support-link {
+  display: block;
+}
+
+.telegram-icon path, .mail-icon path {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.mini-blog .wrapper {
+  padding: 0 2px 0;
+  text-align: justify;
+}
+
+.mini-blog .title {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+.mini-blog .subtitle {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.mini-blog .subtitle-list {
+  padding-left: 40px;
+}
+
+.mini-blog .text {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: justify;
+  margin-bottom: 10px;
+}
+
+.mini-blog .icon {
+  margin-right: 15px;
+}
+
+.mini-blog .icon-title-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+}
+
+.mini-blog .icon-title-wrapper .subtitle, .mini-blog .icon-title-wrapper .title {
+  padding-top: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.mini-blog .block {
+  background-color: #ECECEC;
+  border-radius: 17px;
+  padding: 20px;
+  margin-bottom: 15px;
+}
+
+.mini-blog .step {
+  display: inline;
+  position: relative;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 38px;
+  color: #000;
+}
+
+.mini-blog .step-block {
+  padding: 11px 20px 11px;
+}
+
+.mini-blog .step:last-child::after {
+  display: none;
+  position: absolute;
+  content: "";
+  right: -31px;
+  top: 0;
+  width: 18px;
+  height: 17px;
+  background-image: url(../images/icons/check.svg);
+}
+
+.mini-blog .step + .step {
+  margin-left: 27px;
+}
+
+.mini-blog .step + .step::before {
+  position: absolute;
+  content: "";
+  left: -16px;
+  top: 0;
+  background-image: url(../images/icons/arrow-right.svg);
+  height: 17px;
+  width: 7px;
+}
+
+.mini-blog .link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000;
+  text-decoration: none;
+}
+
+.mini-blog .link + .link {
+  margin-top: 14px;
+}
+
+.mini-blog .link:hover .link-text {
+  color: #A70000;
+}
+
+.mini-blog .link-text {
+  margin-left: 10px;
+  margin-right: 11px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  font-weight: 500;
+}
+
+.mini-blog .link-box {
+  display: inline-block;
+  padding: 15px 20px;
+  border-radius: 17px;
+  border: 2px solid #A70000;
+  margin-bottom: 15px;
+}
+
+.mini-blog .link-btn {
+  display: inline-block;
+  position: relative;
+  padding: 15px 20px;
+  border-radius: 17px;
+  border: 2px solid #A70000;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  background-color: transparent;
+  overflow: hidden;
+  margin-bottom: 20px;
+  word-wrap: break-word;
+  max-width: 90%;
+  margin-right: 5px;
+}
+
+.mini-blog .link-btn::before {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  width: 0px;
+  height: 0px;
+  left: 0;
+  top: 50%;
+  background-color: #A70000;
+  border-radius: 13px;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.mini-blog .link-btn:hover {
+  color: #FFF;
+}
+
+.mini-blog .link-btn:hover::before {
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.mini-blog .link-green {
+  border-color: #18B657;
+}
+
+.mini-blog .link-green::before {
+  background-color: #18B657;
+}
+
+.mini-blog .link-green .link:hover .link-text {
+  color: #18B657;
+}
+
+.mini-blog .mini-icon + .mini-icon {
+  margin-left: 10px;
+}
+
+.mini-blog .list {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: justify;
+  padding-left: 40px;
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.mini-blog .list li {
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.mini-blog .list li::before {
+  position: absolute;
+  content: "";
+  width: 5px;
+  height: 5px;
+  background-color: #000;
+  border-radius: 50%;
+  left: -20px;
+  top: 10px;
+}
+
+.mini-blog .wide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mini-blog .wide-list {
+  margin-bottom: 20px;
+  padding-left: 40px;
+}
+
+.mini-blog .wide .text {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.mini-blog .level-2 {
+  margin-left: 40px;
+}
+
+.mini-blog .align-start {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+.menu--active {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.zoom {
+  position: absolute;
+  right: 30px;
+  bottom: 85px;
+}
+
+.zoom__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.zoom__btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+.zoom__btn + .zoom__btn {
+  margin-top: 15px;
+}
+
+.zoom__btn path {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.zoom__btn:hover path {
+  fill: #AEAEAE;
+}
+
+.map-filters {
+  position: absolute;
+  bottom: 0px;
+  right: 25px;
+  background-color: transparent;
+  max-width: 60px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  z-index: 1003;
+}
+
+.map-filters__header {
+  overflow: hidden;
+  width: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 28px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.map-filters__icon {
+  margin-right: 15px;
+}
+
+.map-filters__icon img {
+  display: block;
+  min-width: 51px;
+  min-height: 27px;
+}
+
+.map-filters__icon path {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.map-filters__heading {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  max-height: 27px;
+  overflow: hidden;
+  word-wrap: none;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.map-filters__items {
+  position: absolute;
+  padding-left: 59px;
+  background-color: rgba(236, 236, 236, 0.7);
+  width: 100%;
+}
+
+.map-filters__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.map-filters__item + .map-filters__item {
+  margin-top: 3px;
+}
+
+.map-filters__item:hover {
+  border-color: #000;
+}
+
+.map-filters__item.map-filters__item--active {
+  background-color: #C4C4C4;
+  border-color: transparent;
+}
+
+.map-filters.map-filters--white {
+  background-color: transparent;
+}
+
+.map-filters.map-filters--white .map-filters__items {
+  background-color: transparent;
+}
+
+.map-filters.map-filters--white .map-filters__header {
+  color: #fff;
+}
+
+.map-filters.map-filters--white .map-filters__icon path {
+  fill: #fff;
+}
+
+.map-filters.map-filters--white:hover .map-filters__header {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.map-filters.map-filters--active.map-filters--white {
+  background-color: #fff;
+  padding: 10px;
+}
+
+.map-filters.map-filters--active.map-filters--white .map-filters__heading {
+  color: #232323;
+}
+
+.map-filters.map-filters--active.map-filters--white .map-filters__icon path {
+  fill: #232323;
+}
+
+.map-filters.map-filters--active.map-filters--white .map-filters__items {
+  background-color: #fff;
+  width: 100%;
+  left: 0;
+  padding-bottom: 10px;
+}
+
+.map-filters__item-icon {
+  margin-right: 18px;
+}
+
+.map-filters__item-text {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.map-filters:hover {
+  max-width: 380px;
+  background-color: rgba(236, 236, 236, 0.7);
+}
+
+.map-filters:hover .map-filters__header {
+  width: 380px;
+  background-color: #C4C4C4;
+}
+
+.map-filters.map-filters--active {
+  background-color: rgba(236, 236, 236, 0.7);
+  max-width: 380px;
+  bottom: 390px;
+}
+
+.map-filters.map-filters--active .map-filters__header {
+  width: 380px;
+}
+
+.map-filters.map-filters--active:hover .map-filters__header {
+  background-color: transparent;
+}
+
+.info__item-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.info__item-button.menu__list-button {
+  display: block;
+  background-color: transparent;
+}
+
+.info__item-button.menu__list-button:hover {
+  background-color: transparent;
+}
+
+.info__item {
+  text-align: justify;
+  background-color: transparent;
+  position: relative;
+  max-height: 60px;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+  overflow: hidden;
+}
+
+.info__item::before {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  left: 5px;
+  border-radius: 19px;
+  background-color: #ECECEC;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+
+.info__item:hover {
+  background-color: none;
+}
+
+.info__item--active {
+  max-height: initial;
+}
+
+.info__item--active::before {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.news {
+  padding: 30px 12px 30px 22px;
+}
+
+.news__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.news__item {
+  padding: 25px 22px;
+  background-color: #ECECEC;
+  border-radius: 30px;
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 10px;
+  position: relative;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.news__item:hover .news__item-source {
+  text-decoration: underline;
+}
+
+.news__item-cover {
+  margin-bottom: 20px;
+}
+
+.news__item-heading {
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.news__item-descr {
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.news__item-source {
+  font-weight: 500;
+  display: block;
+  word-wrap: break-word;
+  color: #000;
+  text-decoration: none;
+  max-width: 412px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.news__item-source::before {
+  content: "Джерело: ";
+  font-weight: 600;
+}
+
+.news__item-source:hover {
+  color: #1045FF;
+}
+
+.news__item-time {
+  position: absolute;
+  bottom: 5px;
+  right: 15px;
+}
+
+.control-hours {
+  padding: 32px 20px 45px 45px;
+}
+
+.control-hours__heading {
+  max-width: 500px;
+}
+
+.control-hours__items {
+  height: 740px;
+}
+
+.control-hours__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.control-hours__time {
+  color: #000E40;
+  margin-left: 20px;
+  white-space: nowrap;
+}
+
+.kills {
+  position: absolute;
+  left: 40px;
+  bottom: 20px;
+  background-color: rgba(236, 236, 236, 0.7);
+}
+
+.kills__link {
+  background-color: rgba(236, 236, 236, 0.7);
+  position: relative;
+  display: block;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  border: none;
+  outline: none;
+  padding-right: 20px;
+}
+
+.kills__link::after {
+  content: "";
+  width: 11px;
+  height: 11px;
+  top: 0px;
+  right: 0px;
+  background-image: url(../images/icons/more.svg);
+  position: absolute;
+}
+
+.kills__link:hover {
+  background: #C4C4C4;
+}
+
+.kills__heading {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000;
+}
+
+.kills__number {
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 88px;
+  color: #A70000;
+}
+
+.kills-window {
+  position: absolute;
+  z-index: 1006;
+  left: 25px;
+  bottom: 25px;
+  -webkit-transform: translateY(200%);
+          transform: translateY(200%);
+  width: 500px;
+  height: 600px;
+  background-color: #fff;
+  border-radius: 17px;
+  -webkit-box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.25);
+  padding: 13px 50px 20px 20px;
+  -webkit-transition: all .4s ease-out;
+  transition: all .4s ease-out;
+}
+
+.kills-window.kills-window--active {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+}
+
+.kills-window.kills-window--active .kills-window__item--active .kills-window__item-info {
+  opacity: 1;
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  pointer-events: all;
+}
+
+.kills-window__heading {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 44px;
+  margin-bottom: 10px;
+}
+
+.kills-window__line {
+  background-color: #AEAEAE;
+  height: 1px;
+  margin-bottom: 30px;
+}
+
+.kills-window__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.kills-window__item {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 4px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  border-radius: 5px;
+}
+
+.kills-window__item:hover {
+  background-color: #ECECEC;
+}
+
+.kills-window__item.kills-window__item--active {
+  background-color: #ECECEC;
+}
+
+.kills-window__text {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  position: relative;
+}
+
+.kills-window__text::after {
+  position: absolute;
+  content: "";
+  height: 6px;
+  width: 6px;
+  right: -15px;
+  top: 0;
+  background-image: url(../images/icons/more.svg);
+  background-size: contain;
+}
+
+.kills-window__icon {
+  width: 60px;
+  height: 35px;
+  margin-right: 20px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.kills-window__number {
+  font-weight: bold;
+  font-size: 24px;
+  color: #A70000;
+}
+
+.kills-window__close {
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.kills-window__item-info {
+  position: absolute;
+  width: 290px;
+  bottom: 50%;
+  left: 50%;
+  background-color: #fff;
+  padding: 18px;
+  border-radius: 17px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  -webkit-transform: translateY(-10%);
+          transform: translateY(-10%);
+  opacity: 0;
+  pointer-events: none;
+  -webkit-box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.25);
+}
+
+.kills-window__info-text {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  min-height: 47px;
+}
+
+.kills-window__info-link {
+  display: block;
+  text-align: right;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #232323;
+  margin-bottom: 10px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.kills-window__info-link:hover {
+  color: #1045FF;
+}
+
+.kills-window__info-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.kills-window__info-img {
+  border-radius: 8px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.kills-window__info-img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.kills-window__info-subtitle {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 8px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.5);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #FFF;
+  text-align: center;
+}
+
+.kills-window__info-subtitle::before {
+  font-size: 14px;
+  line-height: 17px;
+  content: "Приклад: ";
+}
+
+.last-update {
+  opacity: 0;
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+  color: #AEAEAE;
+}
+
+.main {
+  min-height: 100vh;
+  background-color: #ECECEC;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.main__menu {
+  z-index: 1004;
+}
+
+.main__menu-icon {
+  width: 80px;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px;
+  border-radius: 5px;
+  position: absolute;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  top: 53px;
+  right: 53px;
+  cursor: pointer;
+  z-index: 1005;
+}
+
+.main__menu-icon.main__menu-icon--active {
+  -webkit-transform: translateX(40%);
+          transform: translateX(40%);
+}
+
+.main__menu-icon.main__menu-icon--active .main__menu-line:first-child {
+  -webkit-transform: rotate(45deg) translateY(24px);
+          transform: rotate(45deg) translateY(24px);
+}
+
+.main__menu-icon.main__menu-icon--active .main__menu-line:last-child {
+  -webkit-transform: rotate(-45deg) translateY(-24px);
+          transform: rotate(-45deg) translateY(-24px);
+}
+
+.main__menu-icon.main__menu-icon--active .main__menu-line:nth-child(2) {
+  opacity: 0;
+}
+
+.main__menu-icon.main__menu-icon--white .main__menu-line {
+  background-color: #fff;
+}
+
+.main__menu-icon.main__menu-icon--active.main__menu-icon--white .main__menu-line {
+  background-color: #232323;
+}
+
+.main__menu-line {
+  height: 6px;
+  background-color: #232323;
+  border-radius: 5px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.main__heading {
+  position: absolute;
+  z-index: 1003;
+  left: 25px;
+  top: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main__heading.main__heading--white {
+  color: #FFF;
+}
+
+.main__heading-text {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 44px;
+  margin-left: 20px;
+}
+
+.main__map {
+  overflow: visible;
+  position: relative;
+}
+
+.main__map:hover svg {
+  stroke: #0024A4;
+  stroke-width: 1px;
+}
+
+.main__map:hover .kyiv {
+  stroke: #000E40;
+  stroke-width: 2px;
+}
+
+.main__map:hover .main__image svg {
+  stroke: none;
+}
+
+.main__district {
+  pointer-events: none;
+  position: absolute;
+}
+
+.main__district svg {
+  fill: #000E40;
+  stroke: #000E40;
+  stroke-width: 2px;
+  overflow: visible;
+}
+
+.main__district svg path {
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.main__district:hover {
+  z-index: 1;
+}
+
+.main__district:hover svg path, .main__district:hover .fighting-zone, .main__district:hover .big-city, .main__district:hover .small-cities {
+  -webkit-transform: translate(-10px, 10px);
+          transform: translate(-10px, 10px);
+}
+
+.main__district::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #446DFF;
+  font-size: 13px;
+  font-weight: 800;
+  opacity: 0;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  pointer-events: none;
+}
+
+.main__district:hover {
+  -webkit-transform: translate(0%, 0%);
+          transform: translate(0%, 0%);
+}
+
+.main__district:hover::after {
+  color: #FFF;
+}
+
+.main__image svg {
+  fill: #2A9DF0;
+  -webkit-filter: drop-shadow(7px 6px 11px rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(7px 6px 11px rgba(0, 0, 0, 0.25));
+}
+
+.big-city {
+  opacity: 0;
+  z-index: 2;
+  height: 10px;
+  width: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  -webkit-transform: translateX(30%);
+          transform: translateX(30%);
+}
+
+.big-city::after {
+  position: absolute;
+  left: 15px;
+  bottom: 0;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFF;
+  text-shadow: 0px 0px 13px rgba(0, 0, 0, 0.35);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  z-index: 500;
+}
+
+.big-city.bottom::after {
+  top: 0;
+  bottom: auto;
+}
+
+.big-city.top::after {
+  top: auto;
+  bottom: 15px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  left: auto;
+  right: auto;
+}
+
+.small-cities {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.small-city {
+  background-color: #41FD12;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2;
+  opacity: 0;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.small-city::after {
+  position: absolute;
+  color: #FFF;
+  font-weight: 700;
+  font-size: 6px;
+  left: 150%;
+  bottom: 50%;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  white-space: nowrap;
+}
+
+.small-city.top::after {
+  left: auto;
+  bottom: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.small-city.bottom::after {
+  top: 100%;
+  bottom: auto;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.small-city.left::after {
+  left: auto;
+  right: 150%;
+  bottom: 50%;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+}
+
+.small-city.top-left::after {
+  bottom: 100%;
+  right: 100%;
+  left: auto;
+  -webkit-transform: none;
+          transform: none;
+}
+
+.small-city.top-right::after {
+  bottom: 100%;
+  left: 100%;
+  -webkit-transform: none;
+          transform: none;
+}
+
+.small-city.bottom-left::after {
+  top: 100%;
+  right: 100%;
+  bottom: auto;
+  left: auto;
+  -webkit-transform: none;
+          transform: none;
+}
+
+.small-city.bottom-right::after {
+  top: 100%;
+  left: 100%;
+  bottom: auto;
+  right: auto;
+  -webkit-transform: none;
+          transform: none;
+}
+
+.small-city.black::after {
+  color: #000;
+}
+
+.small-city.big::after {
+  font-size: 10px;
+}
+
+.small-city.word-wrap::after {
+  white-space: normal;
+}
+
+.sokal {
+  top: 13px;
+  left: 108px;
+}
+
+.sokal::after {
+  content: "Сокаль";
+}
+
+.chervonograd {
+  top: 26px;
+  left: 102px;
+}
+
+.chervonograd::after {
+  content: "Червоноград";
+}
+
+.redehiv {
+  top: 35px;
+  left: 133px;
+}
+
+.redehiv::after {
+  content: "Радехів";
+}
+
+.rava-ruska {
+  top: 44px;
+  left: 63px;
+}
+
+.rava-ruska::after {
+  content: "Рава-Руська";
+}
+
+.brody {
+  top: 53px;
+  left: 165px;
+}
+
+.brody::after {
+  content: "Броди";
+}
+
+.busk {
+  top: 64px;
+  left: 120px;
+}
+
+.busk::after {
+  content: "Буськ";
+}
+
+.krakovets {
+  top: 62px;
+  left: 41px;
+}
+
+.krakovets::after {
+  content: "Краковець";
+}
+
+.shehyni {
+  top: 75px;
+  left: 37px;
+}
+
+.shehyni::after {
+  content: "Шегині";
+}
+
+.sokilnyky {
+  top: 90px;
+  left: 84px;
+}
+
+.sokilnyky::after {
+  content: "Сокільники";
+}
+
+.zolochev {
+  top: 85px;
+  left: 150px;
+}
+
+.zolochev::after {
+  content: "Золочев";
+}
+
+.dorogobych {
+  top: 127px;
+  left: 66px;
+}
+
+.dorogobych::after {
+  content: "Дорогобич";
+}
+
+.truskavets {
+  top: 141px;
+  left: 66px;
+}
+
+.truskavets::after {
+  content: "Трускавець";
+}
+
+.sambir {
+  top: 107px;
+  left: 45px;
+}
+
+.sambir::after {
+  content: "Самбір";
+}
+
+.striy {
+  top: 141px;
+  left: 82px;
+}
+
+.striy::after {
+  content: "Стрий";
+}
+
+.slavske {
+  top: 184px;
+  left: 48px;
+}
+
+.slavske::after {
+  content: "Славське";
+}
+
+.ratne {
+  top: 29px;
+  left: 56px;
+}
+
+.ratne::after {
+  content: "Ратне";
+}
+
+.lubeshiv {
+  top: 19px;
+  left: 117px;
+}
+
+.lubeshiv::after {
+  content: "Любешів";
+}
+
+.kamin-kashirckiy {
+  top: 31px;
+  left: 79px;
+}
+
+.kamin-kashirckiy::after {
+  content: "Камінь-Каширський";
+}
+
+.shatsk {
+  top: 46px;
+  left: 19px;
+}
+
+.shatsk::after {
+  content: "Шацьк";
+}
+
+.luboml {
+  top: 73px;
+  left: 23px;
+}
+
+.luboml::after {
+  content: "Любомль";
+}
+
+.starovoytove {
+  top: 77px;
+  left: 11px;
+}
+
+.starovoytove::after {
+  content: "Старовойтове";
+}
+
+.kovel {
+  top: 74px;
+  left: 70px;
+}
+
+.kovel::after {
+  content: "Ковель";
+}
+
+.manevychi {
+  top: 72px;
+  left: 124px;
+}
+
+.manevychi::after {
+  content: "Маневичі";
+}
+
+.rozhysche {
+  top: 103px;
+  left: 109px;
+}
+
+.rozhysche::after {
+  content: "Рожище";
+}
+
+.kivertsy {
+  top: 112px;
+  left: 128px;
+}
+
+.kivertsy::after {
+  content: "Ківерці";
+}
+
+.volodymyr {
+  top: 119px;
+  left: 47px;
+}
+
+.volodymyr::after {
+  content: "Володимир";
+}
+
+.novovolynskiy {
+  top: 133px;
+  left: 40px;
+}
+
+.novovolynskiy::after {
+  content: "Нововолинськ";
+}
+
+.horohiv {
+  top: 152px;
+  left: 77px;
+}
+
+.horohiv::after {
+  content: "Горохів";
+}
+
+.pylypets {
+  top: 40px;
+  left: 76px;
+}
+
+.pylypets::after {
+  content: "Пилипець";
+}
+
+.polyana {
+  top: 49px;
+  left: 55px;
+}
+
+.polyana::after {
+  content: "Поляна";
+}
+
+.svalyava {
+  top: 62px;
+  left: 55px;
+}
+
+.svalyava::after {
+  content: "Свалява";
+}
+
+.mukachevo {
+  top: 74px;
+  left: 42px;
+}
+
+.mukachevo::after {
+  content: "Мукачево";
+}
+
+.berehove {
+  top: 91px;
+  left: 30px;
+}
+
+.berehove::after {
+  content: "Берегове";
+}
+
+.vynogradiv {
+  top: 93px;
+  left: 58px;
+}
+
+.vynogradiv::after {
+  content: "Виноградів";
+}
+
+.hust {
+  top: 91px;
+  left: 74px;
+}
+
+.hust::after {
+  content: "Хуст";
+}
+
+.tyachiv {
+  top: 105px;
+  left: 96px;
+}
+
+.tyachiv::after {
+  content: "Тячів";
+}
+
+.rihiv {
+  top: 96px;
+  left: 133px;
+}
+
+.rihiv::after {
+  content: "Ріхів";
+}
+
+.rohatyn {
+  top: 10px;
+  left: 70px;
+}
+
+.rohatyn::after {
+  content: "Рогатин";
+}
+
+.burshtyn {
+  top: 27px;
+  left: 72px;
+}
+
+.burshtyn::after {
+  content: "Бурштин";
+}
+
+.kalush {
+  top: 46px;
+  left: 57px;
+}
+
+.kalush::after {
+  content: "Калуш";
+}
+
+.dolyna {
+  top: 57px;
+  left: 29px;
+}
+
+.dolyna::after {
+  content: "Долина";
+}
+
+.kolomiya {
+  top: 99px;
+  left: 96px;
+}
+
+.kolomiya::after {
+  content: "Коломия";
+}
+
+.yaremche {
+  top: 106px;
+  left: 76px;
+}
+
+.yaremche::after {
+  content: "Яремче";
+}
+
+.snyatyn {
+  top: 106px;
+  left: 131px;
+}
+
+.snyatyn::after {
+  content: "Снятин";
+}
+
+.polyanytsa {
+  top: 118px;
+  left: 59px;
+}
+
+.polyanytsa::after {
+  content: "Поляниця";
+}
+
+.vorohta {
+  top: 126px;
+  left: 67px;
+}
+
+.vorohta::after {
+  content: "Ворохта";
+}
+
+.kremenets {
+  top: 15px;
+  left: 64px;
+}
+
+.kremenets::after {
+  content: "Кременець";
+}
+
+.pochayiv {
+  top: 25px;
+  left: 53px;
+}
+
+.pochayiv::after {
+  content: "Почаїв";
+}
+
+.lanivtsi {
+  top: 41px;
+  left: 90px;
+}
+
+.lanivtsi::after {
+  content: "Ланівці";
+}
+
+.zbarazh {
+  top: 59px;
+  left: 69px;
+}
+
+.zbarazh::after {
+  content: "Збараж";
+}
+
+.berezhany {
+  top: 85px;
+  left: 9px;
+}
+
+.berezhany::after {
+  content: "Бережани";
+}
+
+.kozova {
+  top: 88px;
+  left: 23px;
+}
+
+.kozova::after {
+  content: "Козова";
+}
+
+.terebovlya {
+  top: 101px;
+  left: 56px;
+}
+
+.terebovlya::after {
+  content: "Теребовля";
+}
+
+.buchach {
+  top: 123px;
+  left: 36px;
+}
+
+.buchach::after {
+  content: "Бучач";
+}
+
+.chortkiv {
+  top: 127px;
+  left: 61px;
+}
+
+.chortkiv::after {
+  content: "Чортків";
+}
+
+.borshchiv {
+  top: 148px;
+  left: 84px;
+}
+
+.borshchiv::after {
+  content: "Борщів";
+}
+
+.storozhynets {
+  top: 51px;
+  left: 46px;
+}
+
+.storozhynets::after {
+  content: "Сторожинець";
+}
+
+.hotyn {
+  top: 15px;
+  left: 101px;
+}
+
+.hotyn::after {
+  content: "Хотин";
+}
+
+.kelmentsy {
+  top: 24px;
+  left: 127px;
+}
+
+.kelmentsy::after {
+  content: "Кельменці";
+}
+
+.novodnistrovsk {
+  top: 7px;
+  left: 167px;
+}
+
+.novodnistrovsk::after {
+  content: "Новодністровськ";
+}
+
+.sokyryany {
+  top: 20px;
+  left: 167px;
+}
+
+.sokyryany::after {
+  content: "Сокиряни";
+}
+
+.zarichne {
+  top: 10px;
+  left: 69px;
+}
+
+.zarichne::after {
+  content: "Зарічне";
+}
+
+.dubrovytsya {
+  top: 34px;
+  left: 95px;
+}
+
+.dubrovytsya::after {
+  content: "Дубровиця";
+}
+
+.stare-selo {
+  top: 33px;
+  left: 137px;
+}
+
+.stare-selo::after {
+  content: "Старе Село";
+}
+
+.hlynne {
+  top: 43px;
+  left: 157px;
+}
+
+.hlynne::after {
+  content: "Глинне";
+}
+
+.volodymyrets {
+  top: 54px;
+  left: 68px;
+}
+
+.volodymyrets::after {
+  content: "Володимирець";
+}
+
+.varash {
+  top: 63px;
+  left: 51px;
+}
+
+.varash::after {
+  content: "Вараш";
+}
+
+.sarny {
+  top: 64px;
+  left: 101px;
+}
+
+.sarny::after {
+  content: "Сарни";
+}
+
+.rokytne {
+  top: 69px;
+  left: 146px;
+}
+
+.rokytne::after {
+  content: "Рокитне";
+}
+
+.berezne {
+  top: 97px;
+  left: 111px;
+}
+
+.berezne::after {
+  content: "Березне";
+}
+
+.kostopil {
+  top: 107px;
+  left: 85px;
+}
+
+.kostopil::after {
+  content: "Костопіль";
+}
+
+.klevan {
+  top: 130px;
+  left: 61px;
+}
+
+.klevan::after {
+  content: "Клевань";
+}
+
+.korets {
+  top: 136px;
+  left: 138px;
+}
+
+.korets::after {
+  content: "Корець";
+}
+
+.koryst {
+  top: 143px;
+  left: 131px;
+}
+
+.koryst::after {
+  content: "Користь";
+}
+
+.mlyniv {
+  top: 151px;
+  left: 31px;
+}
+
+.mlyniv::after {
+  content: "Млинів";
+}
+
+.zdolbuniv {
+  top: 153px;
+  left: 71px;
+}
+
+.zdolbuniv::after {
+  content: "Здолбунів";
+}
+
+.dubno {
+  top: 165px;
+  left: 43px;
+}
+
+.dubno::after {
+  content: "Дубно";
+}
+
+.ostrog {
+  top: 170px;
+  left: 97px;
+}
+
+.ostrog::after {
+  content: "Острог";
+}
+
+.netishyn {
+  top: 25px;
+  left: 34px;
+}
+
+.netishyn::after {
+  content: "Нетішин";
+}
+
+.slavuta {
+  top: 28px;
+  left: 44px;
+}
+
+.slavuta::after {
+  content: "Славута";
+}
+
+.shepetivka {
+  top: 37px;
+  left: 57px;
+}
+
+.shepetivka::after {
+  content: "Шепетівка";
+}
+
+.izyaslav {
+  top: 46px;
+  left: 44px;
+}
+
+.izyaslav::after {
+  content: "Ізяслав";
+}
+
+.polonne {
+  top: 46px;
+  left: 89px;
+}
+
+.polonne::after {
+  content: "Полонне";
+}
+
+.teofipol {
+  top: 74px;
+  left: 15px;
+}
+
+.teofipol::after {
+  content: "Теофіполь";
+}
+
+.starokonstyantyniv {
+  top: 79px;
+  left: 68px;
+}
+
+.starokonstyantyniv::after {
+  content: "Староконстянтинів";
+}
+
+.krasyliv {
+  top: 89px;
+  left: 57px;
+}
+
+.krasyliv::after {
+  content: "Красилів";
+}
+
+.volochysk {
+  top: 109px;
+  left: 3px;
+}
+
+.volochysk::after {
+  content: "Волочиськ";
+}
+
+.letychiv {
+  top: 126px;
+  left: 97px;
+}
+
+.letychiv::after {
+  content: "Летичів";
+}
+
+.sataniv {
+  top: 143px;
+  left: 6px;
+}
+
+.sataniv::after {
+  content: "Сатанів";
+}
+
+.derazhnya {
+  top: 139px;
+  left: 78px;
+}
+
+.derazhnya::after {
+  content: "Деражня";
+}
+
+.gorodok {
+  top: 155px;
+  left: 31px;
+}
+
+.gorodok::after {
+  content: "Городок";
+}
+
+.yarmolyntsi {
+  top: 154px;
+  left: 48px;
+}
+
+.yarmolyntsi::after {
+  content: "Ярмолинці";
+}
+
+.vinkivtsi {
+  top: 166px;
+  left: 60px;
+}
+
+.vinkivtsi::after {
+  content: "Віньківці";
+}
+
+.dunayivtsi {
+  top: 176px;
+  left: 40px;
+}
+
+.dunayivtsi::after {
+  content: "Дунаївці";
+}
+
+.nova-ushytsya {
+  top: 184px;
+  left: 60px;
+}
+
+.nova-ushytsya::after {
+  content: "Нова Ушиця";
+}
+
+.kamyanets-podilskiy {
+  top: 197px;
+  left: 24px;
+}
+
+.kamyanets-podilskiy::after {
+  content: "Кам’янець-Подільський";
+}
+
+.slovechne {
+  top: 31px;
+  left: 77px;
+}
+
+.slovechne::after {
+  content: "Словечне";
+}
+
+.pershotravneve {
+  top: 29px;
+  left: 114px;
+}
+
+.pershotravneve::after {
+  content: "Першотравневе";
+}
+
+.ovruch {
+  top: 40px;
+  left: 107px;
+}
+
+.ovruch::after {
+  content: "Овруч";
+}
+
+.olevsk {
+  top: 46px;
+  left: 28px;
+}
+
+.olevsk::after {
+  content: "Олевськ";
+}
+
+.bilokorovychi {
+  top: 60px;
+  left: 58px;
+}
+
+.bilokorovychi::after {
+  content: "Білокоровичі";
+}
+
+.luhyny {
+  top: 65px;
+  left: 82px;
+}
+
+.luhyny::after {
+  content: "Лугини";
+}
+
+.korosten {
+  top: 74px;
+  left: 97px;
+}
+
+.korosten::after {
+  content: "Коростень";
+}
+
+.yemilchyne {
+  top: 78px;
+  left: 38px;
+}
+
+.yemilchyne::after {
+  content: "Ємільчине";
+}
+
+.irshansk {
+  top: 94px;
+  left: 102px;
+}
+
+.irshansk::after {
+  content: "Іршанськ";
+}
+
+.malyn {
+  top: 94px;
+  left: 140px;
+}
+
+.malyn::after {
+  content: "Малин";
+}
+
+.novgrad-volynskiy {
+  top: 109px;
+  left: 25px;
+}
+
+.novgrad-volynskiy::after {
+  content: "Новград-Волинцький";
+}
+
+.horoshiv {
+  top: 105px;
+  left: 80px;
+}
+
+.horoshiv::after {
+  content: "Хорошів";
+}
+
+.bronyky {
+  top: 114px;
+  left: 39px;
+}
+
+.bronyky::after {
+  content: "Броники";
+}
+
+.chernyahiv {
+  top: 122px;
+  left: 92px;
+}
+
+.chernyahiv::after {
+  content: "Черняхів";
+}
+
+.radomyshl {
+  top: 120px;
+  left: 129px;
+}
+
+.radomyshl::after {
+  content: "Радомишль";
+}
+
+.korostyshiv {
+  top: 140px;
+  left: 120px;
+}
+
+.korostyshiv::after {
+  content: "Коростишів";
+}
+
+.romaniv {
+  top: 160px;
+  left: 44px;
+}
+
+.romaniv::after {
+  content: "Романів";
+}
+
+.teterivka {
+  top: 156px;
+  left: 82px;
+}
+
+.teterivka::after {
+  content: "Тетерівка";
+}
+
+.andrushivka {
+  top: 168px;
+  left: 116px;
+}
+
+.andrushivka::after {
+  content: "Андрушівка";
+}
+
+.chudniv {
+  top: 168px;
+  left: 57px;
+}
+
+.chudniv::after {
+  content: "Чуднів";
+}
+
+.lubar {
+  top: 180px;
+  left: 38px;
+}
+
+.lubar::after {
+  content: "Любар";
+}
+
+.bersychiv {
+  top: 183px;
+  left: 89px;
+}
+
+.bersychiv::after {
+  content: "Бердичів";
+}
+
+.kozyatyn {
+  top: 14px;
+  left: 92px;
+}
+
+.kozyatyn::after {
+  content: "Козятин";
+}
+
+.khmilhyk {
+  top: 35px;
+  left: 34px;
+}
+
+.khmilhyk::after {
+  content: "Хмільник";
+}
+
+.kalynivka {
+  top: 43px;
+  left: 72px;
+}
+
+.kalynivka::after {
+  content: "Калинівка";
+}
+
+.pohrebyshche {
+  top: 43px;
+  left: 126px;
+}
+
+.pohrebyshche::after {
+  content: "Погребище";
+}
+
+.lypovets {
+  top: 72px;
+  left: 108px;
+}
+
+.lypovets::after {
+  content: "Липовець";
+}
+
+.illintsi {
+  top: 83px;
+  left: 122px;
+}
+
+.illintsi::after {
+  content: "Іллінці";
+}
+
+.bar {
+  top: 82px;
+  left: 20px;
+}
+
+.bar::after {
+  content: "Бар";
+}
+
+.zhmerynka {
+  top: 90px;
+  left: 43px;
+}
+
+.zhmerynka::after {
+  content: "Жмеринка";
+}
+
+.nemyriv {
+  top: 93px;
+  left: 100px;
+}
+
+.nemyriv::after {
+  content: "Немирів";
+}
+
+.haysyn {
+  top: 106px;
+  left: 132px;
+}
+
+.haysyn::after {
+  content: "Гайсин";
+}
+
+.shargorod {
+  top: 118px;
+  left: 39px;
+}
+
+.shargorod::after {
+  content: "Шаргород";
+}
+
+.ladjyn {
+  top: 118px;
+  left: 123px;
+}
+
+.ladjyn::after {
+  content: "Ладжин";
+}
+
+.tulchyn {
+  top: 125px;
+  left: 102px;
+}
+
+.tulchyn::after {
+  content: "Тульчин";
+}
+
+.tomashpil {
+  top: 135px;
+  left: 74px;
+}
+
+.tomashpil::after {
+  content: "Томашпіль";
+}
+
+.mohyliv-podilskiy {
+  top: 145px;
+  left: 26px;
+}
+
+.mohyliv-podilskiy::after {
+  content: "Могилів-Подільський";
+}
+
+.trosyanets {
+  top: 140px;
+  left: 126px;
+}
+
+.trosyanets::after {
+  content: "Тростянець";
+}
+
+.kryzhopil {
+  top: 152px;
+  left: 104px;
+}
+
+.kryzhopil::after {
+  content: "Крижопіль";
+}
+
+.yampil {
+  top: 167px;
+  left: 58px;
+}
+
+.yampil::after {
+  content: "Ямпіль";
+}
+
+.bershad {
+  top: 156px;
+  left: 145px;
+}
+
+.bershad::after {
+  content: "Бершадь";
+}
+
+.pripyat {
+  top: 10px;
+  left: 50px;
+}
+
+.pripyat::after {
+  content: "Прип’ять";
+}
+
+.chornobyl {
+  top: 22px;
+  left: 60px;
+}
+
+.chornobyl::after {
+  content: "Чорнобиль";
+}
+
+.ivankiv {
+  top: 59px;
+  left: 33px;
+}
+
+.ivankiv::after {
+  content: "Іванків";
+}
+
+.borodynka {
+  top: 84px;
+  left: 43px;
+}
+
+.borodynka::after {
+  content: "Бородянка";
+}
+
+.vyshgorod {
+  top: 87px;
+  left: 75px;
+}
+
+.vyshgorod::after {
+  content: "Вишгород";
+}
+
+.hostomel {
+  top: 89px;
+  left: 57px;
+}
+
+.hostomel::after {
+  content: "Гостомель";
+}
+
+.bucha {
+  top: 97px;
+  left: 57px;
+}
+
+.bucha::after {
+  content: "Буча ";
+}
+
+.irpin {
+  top: 104px;
+  left: 58px;
+}
+
+.irpin::after {
+  content: "Ірпінь";
+}
+
+.makariv {
+  top: 104px;
+  left: 28px;
+}
+
+.makariv::after {
+  content: "Макарів";
+}
+
+.vyshneve {
+  top: 120px;
+  left: 66px;
+}
+
+.vyshneve::after {
+  content: "Вишневе";
+}
+
+.vasylkiv {
+  top: 156px;
+  left: 63px;
+}
+
+.vasylkiv::after {
+  content: "Васильків";
+}
+
+.fastiv {
+  top: 165px;
+  left: 47px;
+}
+
+.fastiv::after {
+  content: "Фастів";
+}
+
+.skvyra {
+  top: 185px;
+  left: 26px;
+}
+
+.skvyra::after {
+  content: "Сквира";
+}
+
+.tetiiv {
+  top: 224px;
+  left: 24px;
+}
+
+.tetiiv::after {
+  content: "Тетіїв";
+}
+
+.bila-tserkva {
+  top: 178px;
+  left: 56px;
+}
+
+.bila-tserkva::after {
+  content: "Біла Церква";
+}
+
+.tarashcha {
+  top: 200px;
+  left: 97px;
+}
+
+.tarashcha::after {
+  content: "Тараща";
+}
+
+.boguslav {
+  top: 204px;
+  left: 107px;
+}
+
+.boguslav::after {
+  content: "Богуслав";
+}
+
+.myronivka {
+  top: 195px;
+  left: 113px;
+}
+
+.myronivka::after {
+  content: "Миронівка";
+}
+
+.obuhiv {
+  top: 164px;
+  left: 90px;
+}
+
+.obuhiv::after {
+  content: "Обухів";
+}
+
+.ukrainka {
+  top: 159px;
+  left: 94px;
+}
+
+.ukrainka::after {
+  content: "Українка";
+}
+
+.rzhyshchiv {
+  top: 168px;
+  left: 110px;
+}
+
+.rzhyshchiv::after {
+  content: "Ржищів";
+}
+
+.pereyzslav {
+  top: 156px;
+  left: 145px;
+}
+
+.pereyzslav::after {
+  content: "Переяслав";
+}
+
+.boryspil {
+  top: 125px;
+  left: 117px;
+}
+
+.boryspil::after {
+  content: "Бориспіль";
+}
+
+.berezan {
+  top: 123px;
+  left: 146px;
+}
+
+.berezan::after {
+  content: "Березань";
+}
+
+.yahotyn {
+  top: 124px;
+  left: 166px;
+}
+
+.yahotyn::after {
+  content: "Яготин";
+}
+
+.zhyrivka {
+  top: 102px;
+  left: 171px;
+}
+
+.zhyrivka::after {
+  content: "Згурівка";
+}
+
+.brovary {
+  top: 105px;
+  left: 103px;
+}
+
+.brovary::after {
+  content: "Бровари";
+}
+
+.savran {
+  top: 7px;
+  left: 122px;
+}
+
+.savran::after {
+  content: "Саврань";
+}
+
+.kodyma {
+  top: 13px;
+  left: 61px;
+}
+
+.kodyma::after {
+  content: "Кодима";
+}
+
+.balta {
+  top: 30px;
+  left: 97px;
+}
+
+.balta::after {
+  content: "Балта";
+}
+
+.lubashivka {
+  top: 36px;
+  left: 138px;
+}
+
+.lubashivka::after {
+  content: "Любашівка";
+}
+
+.podilsk {
+  top: 46px;
+  left: 89px;
+}
+
+.podilsk::after {
+  content: "Подільськ";
+}
+
+.shyryaeve {
+  top: 75px;
+  left: 132px;
+}
+
+.shyryaeve::after {
+  content: "Ширяєве";
+}
+
+.beresivka {
+  top: 103px;
+  left: 179px;
+}
+
+.beresivka::after {
+  content: "Березівка";
+}
+
+.rozdilna {
+  top: 140px;
+  left: 126px;
+}
+
+.rozdilna::after {
+  content: "Роздільна";
+}
+
+.yuzhne {
+  top: 157px;
+  left: 192px;
+}
+
+.yuzhne::after {
+  content: "Южне";
+}
+
+.bilyaivka {
+  top: 166px;
+  left: 137px;
+}
+
+.bilyaivka::after {
+  content: "Біляївка";
+}
+
+.chornomorsk {
+  top: 188px;
+  left: 165px;
+}
+
+.chornomorsk::after {
+  content: "Чорноморськ";
+}
+
+.bilhorod-dnistrovskiy {
+  top: 195px;
+  left: 142px;
+}
+
+.bilhorod-dnistrovskiy::after {
+  content: "Білгород-Дністровський";
+}
+
+.zatoka {
+  top: 207px;
+  left: 153px;
+}
+
+.zatoka::after {
+  content: "Затока";
+}
+
+.sarata {
+  top: 218px;
+  left: 98px;
+}
+
+.sarata::after {
+  content: "Сарата";
+}
+
+.artsyz {
+  top: 219px;
+  left: 83px;
+}
+
+.artsyz::after {
+  content: "Арциз";
+}
+
+.tatarbunary {
+  top: 233px;
+  left: 92px;
+}
+
+.tatarbunary::after {
+  content: "Татарбунари";
+}
+
+.bolhrad {
+  top: 253px;
+  left: 28px;
+}
+
+.bolhrad::after {
+  content: "Болград";
+}
+
+.kiliya {
+  top: 271px;
+  left: 68px;
+}
+
+.kiliya::after {
+  content: "Кілія";
+}
+
+.vylkove {
+  top: 276px;
+  left: 91px;
+}
+
+.vylkove::after {
+  content: "Вилкове";
+}
+
+.izmail {
+  top: 282px;
+  left: 43px;
+}
+
+.izmail::after {
+  content: "Ізмаїл";
+}
+
+.reni {
+  top: 276px;
+  left: 7px;
+}
+
+.reni::after {
+  content: "Рені";
+}
+
+.drabiv {
+  top: 22px;
+  left: 167px;
+}
+
+.drabiv::after {
+  content: "Драбів";
+}
+
+.kaniv {
+  top: 54px;
+  left: 123px;
+}
+
+.kaniv::after {
+  content: "Канів";
+}
+
+.zolotonosha {
+  top: 60px;
+  left: 159px;
+}
+
+.zolotonosha::after {
+  content: "Золотоноша";
+}
+
+.korsun-shevchenkivskiy {
+  top: 83px;
+  left: 112px;
+}
+
+.korsun-shevchenkivskiy::after {
+  content: "Корсунь-Шевченківський";
+}
+
+.horodyshche {
+  top: 94px;
+  left: 125px;
+}
+
+.horodyshche::after {
+  content: "Городище";
+}
+
+.smila {
+  top: 102px;
+  left: 155px;
+}
+
+.smila::after {
+  content: "Сміла";
+}
+
+.chyhyryn {
+  top: 119px;
+  left: 204px;
+}
+
+.chyhyryn::after {
+  content: "Чигирин";
+}
+
+.kamyanka {
+  top: 124px;
+  left: 170px;
+}
+
+.kamyanka::after {
+  content: "Кам’янка";
+}
+
+.zhashkiv {
+  top: 109px;
+  left: 33px;
+}
+
+.zhashkiv::after {
+  content: "Жашків";
+}
+
+.zvenyhorodka {
+  top: 121px;
+  left: 90px;
+}
+
+.zvenyhorodka::after {
+  content: "Звенигородка";
+}
+
+.shpola {
+  top: 129px;
+  left: 118px;
+}
+
+.shpola::after {
+  content: "Шпола";
+}
+
+.monastyryshche {
+  top: 129px;
+  left: 15px;
+}
+
+.monastyryshche::after {
+  content: "Монастирище";
+}
+
+.talne {
+  top: 139px;
+  left: 73px;
+}
+
+.talne::after {
+  content: "Тальне";
+}
+
+.vatutine {
+  top: 130px;
+  left: 99px;
+}
+
+.vatutine::after {
+  content: "Ватутіне";
+}
+
+.hrestynivka {
+  top: 151px;
+  left: 26px;
+}
+
+.hrestynivka::after {
+  content: "Христинівка";
+}
+
+.uman {
+  top: 154px;
+  left: 41px;
+}
+
+.uman::after {
+  content: "Умань";
+}
+
+.svitlovodsk {
+  top: 17px;
+  left: 228px;
+}
+
+.svitlovodsk::after {
+  content: "Світловодськ";
+}
+
+.olexandrivka {
+  top: 29px;
+  left: 169px;
+}
+
+.olexandrivka::after {
+  content: "Олександрівка";
+}
+
+.znamyanka {
+  top: 54px;
+  left: 206px;
+}
+
+.znamyanka::after {
+  content: "Знамянка";
+}
+
+.druha-znamyanka {
+  top: 57px;
+  left: 198px;
+}
+
+.druha-znamyanka::after {
+  content: "Друга Знамянка";
+}
+
+.olexandria {
+  top: 61px;
+  left: 223px;
+}
+
+.olexandria::after {
+  content: "Олександрія";
+}
+
+.novomyrhorod {
+  top: 47px;
+  left: 128px;
+}
+
+.novomyrhorod::after {
+  content: "Новомиргород";
+}
+
+.petrove {
+  top: 92px;
+  left: 240px;
+}
+
+.petrove::after {
+  content: "Петрове";
+}
+
+.kompaniivka {
+  top: 102px;
+  left: 171px;
+}
+
+.kompaniivka::after {
+  content: "Компаніївка";
+}
+
+.dolynska {
+  top: 115px;
+  left: 205px;
+}
+
+.dolynska::after {
+  content: "Долинська";
+}
+
+.bobrynets {
+  top: 120px;
+  left: 166px;
+}
+
+.bobrynets::after {
+  content: "Бобринець";
+}
+
+.novoukrainka {
+  top: 99px;
+  left: 125px;
+}
+
+.novoukrainka::after {
+  content: "Новоукраїнка";
+}
+
+.pomichna {
+  top: 104px;
+  left: 115px;
+}
+
+.pomichna::after {
+  content: "Помічна";
+}
+
+.dobrovelychivka {
+  top: 94px;
+  left: 101px;
+}
+
+.dobrovelychivka::after {
+  content: "Добровеличівка";
+}
+
+.mala-vyska {
+  top: 65px;
+  left: 125px;
+}
+
+.mala-vyska::after {
+  content: "Мала Виска";
+}
+
+.novoarkhanhelsk {
+  top: 62px;
+  left: 74px;
+}
+
+.novoarkhanhelsk::after {
+  content: "Новоархангельстк";
+}
+
+.holovanivsk {
+  top: 89px;
+  left: 49px;
+}
+
+.holovanivsk::after {
+  content: "Голованівськ";
+}
+
+.blahovishchenske {
+  top: 96px;
+  left: 29px;
+}
+
+.blahovishchenske::after {
+  content: "Благовіщенське";
+}
+
+.haivoron {
+  top: 97px;
+  left: 5px;
+}
+
+.haivoron::after {
+  content: "Гайворон";
+}
+
+.pervomaysk {
+  top: 16px;
+  left: 45px;
+}
+
+.pervomaysk::after {
+  content: "Первомайськ";
+}
+
+.kryve-ozero {
+  top: 25px;
+  left: 10px;
+}
+
+.kryve-ozero::after {
+  content: "Криве озеро";
+}
+
+.bratske {
+  top: 33px;
+  left: 88px;
+}
+
+.bratske::after {
+  content: "Братське";
+}
+
+.uzhnoukrainsk {
+  top: 36px;
+  left: 65px;
+}
+
+.uzhnoukrainsk::after {
+  content: "Южноукраїнськ";
+}
+
+.kazanka {
+  top: 41px;
+  left: 179px;
+}
+
+.kazanka::after {
+  content: "Казанка";
+}
+
+.yelanets {
+  top: 51px;
+  left: 111px;
+}
+
+.yelanets::after {
+  content: "Єланець";
+}
+
+.novyy-buh {
+  top: 51px;
+  left: 154px;
+}
+
+.novyy-buh::after {
+  content: "Новий Буг";
+}
+
+.voznesensk {
+  top: 60px;
+  left: 83px;
+}
+
+.voznesensk::after {
+  content: "Вознесенськ";
+}
+
+.bashtanka {
+  top: 77px;
+  left: 145px;
+}
+
+.bashtanka::after {
+  content: "Баштанка";
+}
+
+.veselynove {
+  top: 84px;
+  left: 72px;
+}
+
+.veselynove::after {
+  content: "Веселинове";
+}
+
+.bereznehuvate {
+  top: 86px;
+  left: 172px;
+}
+
+.bereznehuvate::after {
+  content: "Березнегувате";
+}
+
+.nova-odesa {
+  top: 93px;
+  left: 102px;
+}
+
+.nova-odesa::after {
+  content: "Нова Одеса";
+}
+
+.yavkyne {
+  top: 92px;
+  left: 154px;
+}
+
+.yavkyne::after {
+  content: "Явкине";
+}
+
+.snihurivka {
+  top: 111px;
+  left: 167px;
+}
+
+.snihurivka::after {
+  content: "Снігурівка";
+}
+
+.ochakiv {
+  top: 155px;
+  left: 88px;
+}
+
+.ochakiv::after {
+  content: "Очаків";
+}
+
+.hremyach {
+  top: 2px;
+  left: 188px;
+}
+
+.hremyach::after {
+  content: "Грем’яч";
+}
+
+.semenivka {
+  top: 17px;
+  left: 142px;
+}
+
+.semenivka::after {
+  content: "Семенівка";
+}
+
+.zhadove {
+  top: 34px;
+  left: 145px;
+}
+
+.zhadove::after {
+  content: "Жадове";
+}
+
+.novhorod-siverskiy {
+  top: 38px;
+  left: 180px;
+}
+
+.novhorod-siverskiy::after {
+  content: "Новгород-Сіверський";
+}
+
+.horodnya {
+  top: 48px;
+  left: 63px;
+}
+
+.horodnya::after {
+  content: "Городня";
+}
+
+.smovsk {
+  top: 61px;
+  left: 98px;
+}
+
+.smovsk::after {
+  content: "Сновськ";
+}
+
+.ripky {
+  top: 61px;
+  left: 40px;
+}
+
+.ripky::after {
+  content: "Ріпки";
+}
+
+.korukivka {
+  top: 67px;
+  left: 113px;
+}
+
+.korukivka::after {
+  content: "Корюківка";
+}
+
+.brech {
+  top: 73px;
+  left: 119px;
+}
+
+.brech::after {
+  content: "Бреч";
+}
+
+.korop {
+  top: 86px;
+  left: 164px;
+}
+
+.korop::after {
+  content: "Короп";
+}
+
+.slavutych {
+  top: 89px;
+  left: 15px;
+}
+
+.slavutych::after {
+  content: "Славутич";
+}
+
+.mena {
+  top: 91px;
+  left: 106px;
+}
+
+.mena::after {
+  content: "Мена";
+}
+
+.sosnytsya {
+  top: 93px;
+  left: 134px;
+}
+
+.sosnytsya::after {
+  content: "Сосниця";
+}
+
+.baturyn {
+  top: 115px;
+  left: 156px;
+}
+
+.baturyn::after {
+  content: "Батурин";
+}
+
+.borzna {
+  top: 122px;
+  left: 133px;
+}
+
+.borzna::after {
+  content: "Борзна";
+}
+
+.bahmach {
+  top: 129px;
+  left: 154px;
+}
+
+.bahmach::after {
+  content: "Бахмач";
+}
+
+.nizhyn {
+  top: 142px;
+  left: 97px;
+}
+
+.nizhyn::after {
+  content: "Ніжин";
+}
+
+.nosivka {
+  top: 155px;
+  left: 79px;
+}
+
+.nosivka::after {
+  content: "Носівка";
+}
+
+.talalayivka {
+  top: 155px;
+  left: 178px;
+}
+
+.talalayivka::after {
+  content: "Талалаївка";
+}
+
+.oster {
+  top: 153px;
+  left: 23px;
+}
+
+.oster::after {
+  content: "Остер";
+}
+
+.kozelets {
+  top: 158px;
+  left: 38px;
+}
+
+.kozelets::after {
+  content: "Козелець";
+}
+
+.ichnya {
+  top: 162px;
+  left: 122px;
+}
+
+.ichnya::after {
+  content: "Ічня";
+}
+
+.bobrovytsa {
+  top: 174px;
+  left: 60px;
+}
+
+.bobrovytsa::after {
+  content: "Бобровиця";
+}
+
+.pryluky {
+  top: 188px;
+  left: 121px;
+}
+
+.pryluky::after {
+  content: "Прилуки";
+}
+
+.varva {
+  top: 200px;
+  left: 143px;
+}
+
+.varva::after {
+  content: "Варва";
+}
+
+.seredyna-buda {
+  top: 21px;
+  left: 69px;
+}
+
+.seredyna-buda::after {
+  content: "Середина-Буда";
+}
+
+.svesa {
+  top: 50px;
+  left: 64px;
+}
+
+.svesa::after {
+  content: "Свеса";
+}
+
+.shostka {
+  top: 54px;
+  left: 36px;
+}
+
+.shostka::after {
+  content: "Шостка";
+}
+
+.hluhiv {
+  top: 77px;
+  left: 57px;
+}
+
+.hluhiv::after {
+  content: "Глухів";
+}
+
+.putivl {
+  top: 111px;
+  left: 60px;
+}
+
+.putivl::after {
+  content: "Путивль";
+}
+
+.konotop {
+  top: 124px;
+  left: 15px;
+}
+
+.konotop::after {
+  content: "Конотоп";
+}
+
+.buryn {
+  top: 126px;
+  left: 57px;
+}
+
+.buryn::after {
+  content: "Буринь";
+}
+
+.pidlypne {
+  top: 131px;
+  left: 14px;
+}
+
+.pidlypne::after {
+  content: "Підлипне";
+}
+
+.bilopillya {
+  top: 131px;
+  left: 87px;
+}
+
+.bilopillya::after {
+  content: "Білопілля";
+}
+
+.richky {
+  top: 135px;
+  left: 101px;
+}
+
+.richky::after {
+  content: "Річки";
+}
+
+.stepanivka {
+  top: 154px;
+  left: 105px;
+}
+
+.stepanivka::after {
+  content: "Степанівка";
+}
+
+.romny {
+  top: 171px;
+  left: 38px;
+}
+
+.romny::after {
+  content: "Ромни";
+}
+
+.nedryhailov {
+  top: 166px;
+  left: 63px;
+}
+
+.nedryhailov::after {
+  content: "Недригайлов";
+}
+
+.krasnopillya {
+  top: 171px;
+  left: 151px;
+}
+
+.krasnopillya::after {
+  content: "Краснопілля";
+}
+
+.lypova-dolyna {
+  top: 190px;
+  left: 54px;
+}
+
+.lypova-dolyna::after {
+  content: "Липова Долина";
+}
+
+.lebedyn {
+  top: 188px;
+  left: 109px;
+}
+
+.lebedyn::after {
+  content: "Лебедин";
+}
+
+.trostaynets {
+  top: 194px;
+  left: 134px;
+}
+
+.trostaynets::after {
+  content: "Тростянець";
+}
+
+.ohtyrka {
+  top: 217px;
+  left: 126px;
+}
+
+.ohtyrka::after {
+  content: "Охтирка";
+}
+
+.zavodske {
+  top: 11px;
+  left: 83px;
+}
+
+.zavodske::after {
+  content: "Заводське";
+}
+
+.hadyach {
+  top: 16px;
+  left: 122px;
+}
+
+.hadyach::after {
+  content: "Гадяч";
+}
+
+.pyryatyn {
+  top: 26px;
+  left: 31px;
+}
+
+.pyryatyn::after {
+  content: "Пирятин";
+}
+
+.hrebinka {
+  top: 37px;
+  left: 20px;
+}
+
+.hrebinka::after {
+  content: "Гребінка";
+}
+
+.zinkov {
+  top: 36px;
+  left: 149px;
+}
+
+.zinkov::after {
+  content: "Зіньків";
+}
+
+.lubny {
+  top: 46px;
+  left: 64px;
+}
+
+.lubny::after {
+  content: "Лубни";
+}
+
+.velyki-vorochynci {
+  top: 53px;
+  left: 121px;
+}
+
+.velyki-vorochynci::after {
+  content: "Великі Сорочинці";
+}
+
+.kotelva {
+  top: 49px;
+  left: 180px;
+}
+
+.kotelva::after {
+  content: "Котельва";
+}
+
+.myrhorod {
+  top: 59px;
+  left: 98px;
+}
+
+.myrhorod::after {
+  content: "Миргород";
+}
+
+.shyshaky {
+  top: 65px;
+  left: 128px;
+}
+
+.shyshaky::after {
+  content: "Шишаки";
+}
+
+.opishnya {
+  top: 61px;
+  left: 171px;
+}
+
+.opishnya::after {
+  content: "Опішня";
+}
+
+.orzhytsya {
+  top: 78px;
+  left: 43px;
+}
+
+.orzhytsya::after {
+  content: "Оржиця";
+}
+
+.horol {
+  top: 78px;
+  left: 78px;
+}
+
+.horol::after {
+  content: "Хорол";
+}
+
+.velyka-bahackka {
+  top: 75px;
+  left: 108px;
+}
+
+.velyka-bahackka::after {
+  content: "Велика Багачка";
+}
+
+.dykanka {
+  top: 75px;
+  left: 164px;
+}
+
+.dykanka::after {
+  content: "Диканька";
+}
+
+.chutove {
+  top: 86px;
+  left: 207px;
+}
+
+.chutove::after {
+  content: "Чутове";
+}
+
+.karlivka {
+  top: 113px;
+  left: 206px;
+}
+
+.karlivka::after {
+  content: "Карлівка";
+}
+
+.mashivka {
+  top: 116px;
+  left: 185px;
+}
+
+.mashivka::after {
+  content: "Машівка";
+}
+
+.reshytylivka {
+  top: 99px;
+  left: 131px;
+}
+
+.reshytylivka::after {
+  content: "Решитілівка";
+}
+
+.rozsoshentsi {
+  top: 110px;
+  left: 157px;
+}
+
+.rozsoshentsi::after {
+  content: "Розсошенці";
+}
+
+.hlobyno {
+  top: 110px;
+  left: 76px;
+}
+
+.hlobyno::after {
+  content: "Глобине";
+}
+
+.novi-sandjary {
+  top: 125px;
+  left: 147px;
+}
+
+.novi-sandjary::after {
+  content: "Нові Санджари";
+}
+
+.kobelyaky {
+  top: 138px;
+  left: 140px;
+}
+
+.kobelyaky::after {
+  content: "Кобеляки";
+}
+
+.kremenchuh {
+  top: 147px;
+  left: 86px;
+}
+
+.kremenchuh::after {
+  content: "Кременчуг";
+}
+
+.tsarychanka {
+  top: 22px;
+  left: 102px;
+}
+
+.tsarychanka::after {
+  content: "Царичанка";
+}
+
+.pereshchepyne {
+  top: 18px;
+  left: 154px;
+}
+
+.pereshchepyne::after {
+  content: "Перещепине";
+}
+
+.verhnyodniprovsk {
+  top: 53px;
+  left: 88px;
+}
+
+.verhnyodniprovsk::after {
+  content: "Верхньодніпровськ";
+}
+
+.novonoskovsk {
+  top: 57px;
+  left: 145px;
+}
+
+.novonoskovsk::after {
+  content: "Новомосковськ";
+}
+
+.pavlograd {
+  top: 65px;
+  left: 201px;
+}
+
+.pavlograd::after {
+  content: "Павлоград";
+}
+
+.kamyanske {
+  top: 65px;
+  left: 104px;
+}
+
+.kamyanske::after {
+  content: "Кам’янське";
+}
+
+.ternivka {
+  top: 72px;
+  left: 217px;
+}
+
+.ternivka::after {
+  content: "Тернівка";
+}
+
+.vilnohirsk {
+  top: 70px;
+  left: 63px;
+}
+
+.vilnohirsk::after {
+  content: "Вільногірськ";
+}
+
+.pyatyhatky {
+  top: 77px;
+  left: 45px;
+}
+
+.pyatyhatky::after {
+  content: "П’ятихатки";
+}
+
+.zhovti-vody {
+  top: 87px;
+  left: 38px;
+}
+
+.zhovti-vody::after {
+  content: "Жовті Води";
+}
+
+.pershotravensk {
+  top: 85px;
+  left: 237px;
+}
+
+.pershotravensk::after {
+  content: "Першотравенськ";
+}
+
+.synelnykove {
+  top: 93px;
+  left: 167px;
+}
+
+.synelnykove::after {
+  content: "Синельникове";
+}
+
+.mezhova {
+  top: 94px;
+  left: 251px;
+}
+
+.mezhova::after {
+  content: "Межова";
+}
+
+.valylkivka {
+  top: 99px;
+  left: 203px;
+}
+
+.valylkivka::after {
+  content: "Васильківка";
+}
+
+.pokrovske {
+  top: 117px;
+  left: 218px;
+}
+
+.pokrovske::after {
+  content: "Покровське";
+}
+
+.sofiivka {
+  top: 116px;
+  left: 58px;
+}
+
+.sofiivka::after {
+  content: "Софіївка";
+}
+
+.kryviy-rih {
+  top: 126px;
+  left: 19px;
+}
+
+.kryviy-rih::after {
+  content: "Кривий Ріг";
+}
+
+.shyroke {
+  top: 149px;
+  left: 21px;
+}
+
+.shyroke::after {
+  content: "Широке";
+}
+
+.apostolove {
+  top: 152px;
+  left: 56px;
+}
+
+.apostolove::after {
+  content: "Апостолове";
+}
+
+.pokrov {
+  top: 154px;
+  left: 77px;
+}
+
+.pokrov::after {
+  content: "Покров";
+}
+
+.nikopol {
+  top: 159px;
+  left: 94px;
+}
+
+.nikopol::after {
+  content: "Нікополь";
+}
+
+.zelenodolsk {
+  top: 164px;
+  left: 46px;
+}
+
+.zelenodolsk::after {
+  content: "Зеленодольськ";
+}
+
+.velyka-olexandrivka {
+  top: 24px;
+  left: 119px;
+}
+
+.velyka-olexandrivka::after {
+  content: "Велика Олександрівка";
+}
+
+.verhniy-rohanchyk {
+  top: 37px;
+  left: 192px;
+}
+
+.verhniy-rohanchyk::after {
+  content: "Верхній Рогачик";
+}
+
+.velyka-lepetyha {
+  top: 45px;
+  left: 159px;
+}
+
+.velyka-lepetyha::after {
+  content: "Велика лепетиха";
+}
+
+.kahovka {
+  top: 69px;
+  left: 139px;
+}
+
+.kahovka::after {
+  content: "Каховка";
+}
+
+.nova-kahovka {
+  top: 76px;
+  left: 132px;
+}
+
+.nova-kahovka::after {
+  content: "Нова Каховка";
+}
+
+.nyzhni-sirohozy {
+  top: 70px;
+  left: 195px;
+}
+
+.nyzhni-sirohozy::after {
+  content: "Нижні Сірогози";
+}
+
+.ivanivka {
+  top: 84px;
+  left: 203px;
+}
+
+.ivanivka::after {
+  content: "Іванівка";
+}
+
+.aihamany {
+  top: 89px;
+  left: 188px;
+}
+
+.aihamany::after {
+  content: "Айгамани";
+}
+
+.chaplynka {
+  top: 114px;
+  left: 145px;
+}
+
+.chaplynka::after {
+  content: "Чаплинка";
+}
+
+.novotroyitske {
+  top: 122px;
+  left: 187px;
+}
+
+.novotroyitske::after {
+  content: "Новотроїцьке";
+}
+
+.kalanchak {
+  top: 125px;
+  left: 126px;
+}
+
+.kalanchak::after {
+  content: "Каланчак";
+}
+
+.hinichensk {
+  top: 136px;
+  left: 221px;
+}
+
+.hinichensk::after {
+  content: "Гініченськ";
+}
+
+.schastlyvtseve {
+  top: 153px;
+  left: 223px;
+}
+
+.schastlyvtseve::after {
+  content: "Щасливцеве";
+}
+
+.strilkove {
+  top: 169px;
+  left: 228px;
+}
+
+.strilkove::after {
+  content: "Стрілкове";
+}
+
+.oleshky {
+  top: 100px;
+  left: 78px;
+}
+
+.oleshky::after {
+  content: "Олешки";
+}
+
+.stanislav {
+  top: 95px;
+  left: 43px;
+}
+
+.stanislav::after {
+  content: "Станіслав";
+}
+
+.hola-prystan {
+  top: 107px;
+  left: 66px;
+}
+
+.hola-prystan::after {
+  content: "Гола Пристань";
+}
+
+.zaliznyy-port {
+  top: 140px;
+  left: 52px;
+}
+
+.zaliznyy-port::after {
+  content: "Залізний Порт";
+}
+
+.lazurne {
+  top: 144px;
+  left: 67px;
+}
+
+.lazurne::after {
+  content: "Лазурне";
+}
+
+.skadovsk {
+  top: 141px;
+  left: 90px;
+}
+
+.skadovsk::after {
+  content: "Скадовськ";
+}
+
+.armyansk {
+  top: 5px;
+  left: 85px;
+}
+
+.armyansk::after {
+  content: "Армянськ";
+}
+
+.chervonoperekopsk {
+  top: 24px;
+  left: 90px;
+}
+
+.chervonoperekopsk::after {
+  content: "Червоноперекопськ";
+}
+
+.jankoi {
+  top: 48px;
+  left: 143px;
+}
+
+.jankoi::after {
+  content: "Джанкой";
+}
+
+.pervomaiske {
+  top: 51px;
+  left: 96px;
+}
+
+.pervomaiske::after {
+  content: "Первомайське";
+}
+
+.krasnohvardiyske {
+  top: 72px;
+  left: 132px;
+}
+
+.krasnohvardiyske::after {
+  content: "Красногвардійське";
+}
+
+.nyzhnyohirskiy {
+  top: 76px;
+  left: 164px;
+}
+
+.nyzhnyohirskiy::after {
+  content: "Нижньогірський";
+}
+
+.rozdolne {
+  top: 43px;
+  left: 65px;
+}
+
+.rozdolne::after {
+  content: "Роздольне";
+}
+
+.mizhvodne {
+  top: 58px;
+  left: 23px;
+}
+
+.mizhvodne::after {
+  content: "Міжводне";
+}
+
+.chervonomorske {
+  top: 65px;
+  left: 12px;
+}
+
+.chervonomorske::after {
+  content: "Червономорське";
+}
+
+.olenivka {
+  top: 79px;
+  left: 1px;
+}
+
+.olenivka::after {
+  content: "Оленівка";
+}
+
+.novoozerne {
+  top: 79px;
+  left: 46px;
+}
+
+.novoozerne::after {
+  content: "Новоозерне";
+}
+
+.zaozerne {
+  top: 102px;
+  left: 49px;
+}
+
+.zaozerne::after {
+  content: "Заозерне";
+}
+
+.yevpatoria {
+  top: 99px;
+  left: 58px;
+}
+
+.yevpatoria::after {
+  content: "Євпаторія";
+}
+
+.saky {
+  top: 106px;
+  left: 76px;
+}
+
+.saky::after {
+  content: "Саки";
+}
+
+.sevastopol {
+  top: 154px;
+  left: 66px;
+}
+
+.sevastopol::after {
+  content: "Севастополь";
+}
+
+.bahchysarai {
+  top: 143px;
+  left: 88px;
+}
+
+.bahchysarai::after {
+  content: "Бахчисарай";
+}
+
+.yalta {
+  top: 166px;
+  left: 113px;
+}
+
+.yalta::after {
+  content: "Ялта";
+}
+
+.hursuf {
+  top: 159px;
+  left: 121px;
+}
+
+.hursuf::after {
+  content: "Гурзуф";
+}
+
+.alushta {
+  top: 143px;
+  left: 131px;
+}
+
+.alushta::after {
+  content: "Алушта";
+}
+
+.novyy-svit {
+  top: 134px;
+  left: 159px;
+}
+
+.novyy-svit::after {
+  content: "Новий Світ";
+}
+
+.sudak {
+  top: 130px;
+  left: 168px;
+}
+
+.sudak::after {
+  content: "Судак";
+}
+
+.koktebel {
+  top: 124px;
+  left: 183px;
+}
+
+.koktebel::after {
+  content: "Коктебель";
+}
+
+.feodosia {
+  top: 115px;
+  left: 192px;
+}
+
+.feodosia::after {
+  content: "Феодосія";
+}
+
+.staryi-krym {
+  top: 114px;
+  left: 169px;
+}
+
+.staryi-krym::after {
+  content: "Старий Крим";
+}
+
+.bilohirsk {
+  top: 111px;
+  left: 144px;
+}
+
+.bilohirsk::after {
+  content: "Білогірськ";
+}
+
+.lenine {
+  top: 88px;
+  left: 222px;
+}
+
+.lenine::after {
+  content: "Леніне";
+}
+
+.shcholkine {
+  top: 73px;
+  left: 222px;
+}
+
+.shcholkine::after {
+  content: "Щолкіне";
+}
+
+.kerch {
+  top: 83px;
+  left: 270px;
+}
+
+.kerch::after {
+  content: "Керч";
+}
+
+.zolochiv {
+  top: 18px;
+  left: 76px;
+}
+
+.zolochiv::after {
+  content: "Золочів";
+}
+
+.vovchansk {
+  top: 16px;
+  left: 138px;
+}
+
+.vovchansk::after {
+  content: "Вовчанськ";
+}
+
+.bohoduhiv {
+  top: 32px;
+  left: 50px;
+}
+
+.bohoduhiv::after {
+  content: "Богодухів";
+}
+
+.krasnokutsk {
+  top: 37px;
+  left: 15px;
+}
+
+.krasnokutsk::after {
+  content: "Краснокутськ";
+}
+
+.derhachi {
+  top: 41px;
+  left: 91px;
+}
+
+.derhachi::after {
+  content: "Дергачі";
+}
+
+.sharivka {
+  top: 43px;
+  left: 33px;
+}
+
+.sharivka::after {
+  content: "Шарівка";
+}
+
+.velykyy-burluk {
+  top: 44px;
+  left: 167px;
+}
+
+.velykyy-burluk::after {
+  content: "Великий Бурлук";
+}
+
+.pisochyn {
+  top: 53px;
+  left: 91px;
+}
+
+.pisochyn::after {
+  content: "Пісочин";
+}
+
+.merefa {
+  top: 61px;
+  left: 85px;
+}
+
+.merefa::after {
+  content: "Мерефа";
+}
+
+.chuhuiv {
+  top: 66px;
+  left: 125px;
+}
+
+.chuhuiv::after {
+  content: "Чугуїв";
+}
+
+.malynivka {
+  top: 76px;
+  left: 134px;
+}
+
+.malynivka::after {
+  content: "Малинівка";
+}
+
+.kupyansk {
+  top: 82px;
+  left: 191px;
+}
+
+.kupyansk::after {
+  content: "Куп’янськ";
+}
+
+.shevchenkove {
+  top: 83px;
+  left: 157px;
+}
+
+.shevchenkove::after {
+  content: "Шевченкове";
+}
+
+.kivsharivka {
+  top: 89px;
+  left: 195px;
+}
+
+.kivsharivka::after {
+  content: "Ківшарівка";
+}
+
+.pervomayskyy {
+  top: 103px;
+  left: 97px;
+}
+
+.pervomayskyy::after {
+  content: "Первомайський";
+}
+
+.savyntsi {
+  top: 106px;
+  left: 154px;
+}
+
+.savyntsi::after {
+  content: "Савинці";
+}
+
+.krasnograd {
+  top: 111px;
+  left: 44px;
+}
+
+.krasnograd::after {
+  content: "Красноград";
+}
+
+.isum {
+  top: 120px;
+  left: 173px;
+}
+
+.isum::after {
+  content: "Ізюм";
+}
+
+.bakaliya {
+  top: 104px;
+  left: 140px;
+}
+
+.bakaliya::after {
+  content: "Бакалія";
+}
+
+.kehychivka {
+  top: 119px;
+  left: 61px;
+}
+
+.kehychivka::after {
+  content: "Кегичівка";
+}
+
+.sahnovshchyna {
+  top: 134px;
+  left: 67px;
+}
+
+.sahnovshchyna::after {
+  content: "Сахновщина";
+}
+
+.lozova {
+  top: 194px;
+  left: 97px;
+}
+
+.lozova::after {
+  content: "Лозова";
+}
+
+.blyznyuky {
+  top: 169px;
+  left: 113px;
+}
+
+.blyznyuky::after {
+  content: "Близнюки";
+}
+
+.vilnyansk {
+  top: 19px;
+  left: 81px;
+}
+
+.vilnyansk::after {
+  content: "Вільнянськ";
+}
+
+.novomykolayivka {
+  top: 23px;
+  left: 106px;
+}
+
+.novomykolayivka::after {
+  content: "Новомиколаївка";
+}
+
+.hulyaypole {
+  top: 46px;
+  left: 136px;
+}
+
+.hulyaypole::after {
+  content: "Гуляйполе";
+}
+
+.orihiv {
+  top: 55px;
+  left: 103px;
+}
+
+.orihiv::after {
+  content: "Оріхів";
+}
+
+.kamyanka-dniprovska {
+  top: 65px;
+  left: 13px;
+}
+
+.kamyanka-dniprovska::after {
+  content: "Кам’янка-Дніпровська";
+}
+
+.energodar {
+  top: 61px;
+  left: 24px;
+}
+
+.energodar::after {
+  content: "Енергодар";
+}
+
+.vasylivka {
+  top: 65px;
+  left: 69px;
+}
+
+.vasylivka::after {
+  content: "Василівка";
+}
+
+.polohy {
+  top: 68px;
+  left: 135px;
+}
+
+.polohy::after {
+  content: "Пологи";
+}
+
+.kamyanka-2 {
+  top: 75px;
+  left: 164px;
+}
+
+.kamyanka-2::after {
+  content: "Кам’янка";
+}
+
+.rozivka {
+  top: 72px;
+  left: 191px;
+}
+
+.rozivka::after {
+  content: "Розівка";
+}
+
+.dniprorudne {
+  top: 75px;
+  left: 45px;
+}
+
+.dniprorudne::after {
+  content: "Дніпрорудне";
+}
+
+.myhailivka {
+  top: 82px;
+  left: 64px;
+}
+
+.myhailivka::after {
+  content: "Михайлівка";
+}
+
+.tokmak {
+  top: 84px;
+  left: 105px;
+}
+
+.tokmak::after {
+  content: "Токмак";
+}
+
+.molochansk {
+  top: 92px;
+  left: 96px;
+}
+
+.molochansk::after {
+  content: "Молочанськ";
+}
+
+.chernigivka {
+  top: 97px;
+  left: 130px;
+}
+
+.chernigivka::after {
+  content: "Чернігівка";
+}
+
+.vesele {
+  top: 107px;
+  left: 45px;
+}
+
+.vesele::after {
+  content: "Веселе";
+}
+
+.melitopol {
+  top: 132px;
+  left: 79px;
+}
+
+.melitopol::after {
+  content: "Мелітополь";
+}
+
+.konstantynivka-pryazonske {
+  top: 139px;
+  left: 91px;
+}
+
+.konstantynivka-pryazonske::after {
+  content: "Константинівка-Приазовське";
+}
+
+.yakymivka {
+  top: 145px;
+  left: 70px;
+}
+
+.yakymivka::after {
+  content: "Якимівка";
+}
+
+.novodanylivka {
+  top: 156px;
+  left: 52px;
+}
+
+.novodanylivka::after {
+  content: "Новоданилівка";
+}
+
+.kyrylivka {
+  top: 173px;
+  left: 74px;
+}
+
+.kyrylivka::after {
+  content: "Кирилівка";
+}
+
+.prymorsk {
+  top: 141px;
+  left: 142px;
+}
+
+.prymorsk::after {
+  content: "Приморськ";
+}
+
+.berdyansk {
+  top: 131px;
+  left: 173px;
+}
+
+.berdyansk::after {
+  content: "Бердянськ";
+}
+
+.svyatohirsk {
+  top: 14px;
+  left: 67px;
+}
+
+.svyatohirsk::after {
+  content: "Святогірськ";
+}
+
+.lyman {
+  top: 20px;
+  left: 90px;
+}
+
+.lyman::after {
+  content: "Лиман";
+}
+
+.slovyansk {
+  top: 36px;
+  left: 66px;
+}
+
+.slovyansk::after {
+  content: "Слов’янськ";
+}
+
+.kramatorsk {
+  top: 45px;
+  left: 62px;
+}
+
+.kramatorsk::after {
+  content: "Краматорськ";
+}
+
+.druzhrivka {
+  top: 60px;
+  left: 58px;
+}
+
+.druzhrivka::after {
+  content: "Дружківка";
+}
+
+.bahmut {
+  top: 59px;
+  left: 93px;
+}
+
+.bahmut::after {
+  content: "Бахмут";
+}
+
+.konstantynivka {
+  top: 67px;
+  left: 77px;
+}
+
+.konstantynivka::after {
+  content: "Константинівка";
+}
+
+.dobropillya {
+  top: 70px;
+  left: 38px;
+}
+
+.dobropillya::after {
+  content: "Добропілля";
+}
+
+.pokrovsk {
+  top: 93px;
+  left: 40px;
+}
+
+.pokrovsk::after {
+  content: "Покровськ";
+}
+
+.horlivka {
+  top: 92px;
+  left: 94px;
+}
+
+.horlivka::after {
+  content: "Горлівка";
+}
+
+.avdiivka {
+  top: 103px;
+  left: 75px;
+}
+
+.avdiivka::after {
+  content: "Авдіївка";
+}
+
+.kurahove {
+  top: 124px;
+  left: 40px;
+}
+
+.kurahove::after {
+  content: "Курахове";
+}
+
+.shahtarsk {
+  top: 122px;
+  left: 122px;
+}
+
+.shahtarsk::after {
+  content: "Шахтарськ";
+}
+
+.velyka-novosilka {
+  top: 137px;
+  left: 19px;
+}
+
+.velyka-novosilka::after {
+  content: "Велика Новосілка";
+}
+
+.volnovaha {
+  top: 167px;
+  left: 59px;
+}
+
+.volnovaha::after {
+  content: "Волноваха";
+}
+
+.boykivske {
+  top: 189px;
+  left: 101px;
+}
+
+.boykivske::after {
+  content: "Бойківське";
+}
+
+.nikolske {
+  top: 205px;
+  left: 46px;
+}
+
+.nikolske::after {
+  content: "Нікольське";
+}
+
+.mariupol {
+  top: 209px;
+  left: 65px;
+}
+
+.mariupol::after {
+  content: "Маріуполь";
+}
+
+.novoazovsk {
+  top: 211px;
+  left: 101px;
+}
+
+.novoazovsk::after {
+  content: "Новоазовськ";
+}
+
+.manhush {
+  top: 221px;
+  left: 51px;
+}
+
+.manhush::after {
+  content: "Мангуш";
+}
+
+.urzuf {
+  top: 232px;
+  left: 36px;
+}
+
+.urzuf::after {
+  content: "Урзуф";
+}
+
+.yalta-2 {
+  top: 232px;
+  left: 52px;
+}
+
+.yalta-2::after {
+  content: "Ялта";
+}
+
+.bilolutsk {
+  top: 30px;
+  left: 77px;
+}
+
+.bilolutsk::after {
+  content: "Білолуцьк";
+}
+
+.bilokurakine {
+  top: 52px;
+  left: 56px;
+}
+
+.bilokurakine::after {
+  content: "Білокуракине";
+}
+
+.novopskov {
+  top: 46px;
+  left: 84px;
+}
+
+.novopskov::after {
+  content: "Новопсков";
+}
+
+.markivka {
+  top: 59px;
+  left: 111px;
+}
+
+.markivka::after {
+  content: "Марківка";
+}
+
+.svatove {
+  top: 58px;
+  left: 26px;
+}
+
+.svatove::after {
+  content: "Сватове";
+}
+
+.milove {
+  top: 69px;
+  left: 147px;
+}
+
+.milove::after {
+  content: "Мілове";
+}
+
+.starobilsk {
+  top: 78px;
+  left: 78px;
+}
+
+.starobilsk::after {
+  content: "Старобільськ";
+}
+
+.bilovodsk {
+  top: 90px;
+  left: 114px;
+}
+
+.bilovodsk::after {
+  content: "Біловодськ";
+}
+
+.novoaidar {
+  top: 109px;
+  left: 89px;
+}
+
+.novoaidar::after {
+  content: "Новоайдар";
+}
+
+.severodonetsk {
+  top: 113px;
+  left: 47px;
+}
+
+.severodonetsk::after {
+  content: "Сєвєродонецьк";
+}
+
+.stanytsa-lughanska {
+  top: 125px;
+  left: 104px;
+}
+
+.stanytsa-lughanska::after {
+  content: "Станиця Луганська";
+}
+
+.lysychansk {
+  top: 122px;
+  left: 43px;
+}
+
+.lysychansk::after {
+  content: "Лисичанськ";
+}
+
+.kadiivka {
+  top: 149px;
+  left: 56px;
+}
+
+.kadiivka::after {
+  content: "Кадіївка";
+}
+
+.alchevsk {
+  top: 165px;
+  left: 66px;
+}
+
+.alchevsk::after {
+  content: "Алчевськ";
+}
+
+.khrystalnyy {
+  top: 199px;
+  left: 72px;
+}
+
+.khrystalnyy::after {
+  content: "Хрустальний";
+}
+
+.antracyt {
+  top: 201px;
+  left: 81px;
+}
+
+.antracyt::after {
+  content: "Антрацит";
+}
+
+.dovzhansk {
+  top: 203px;
+  left: 118px;
+}
+
+.dovzhansk::after {
+  content: "Довжанськ";
+}
+
+.fighting-zone {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-repeat: no-repeat;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  opacity: 0;
+}
+
+.fired::before {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  content: "";
+  width: 23px;
+  height: 23px;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  -webkit-transform: translate(-20%, -20%);
+          transform: translate(-20%, -20%);
+  position: absolute;
+  background-image: url(../images/icons/fire.svg);
+}
+
+.attack-zones {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.attack-zones img {
+  max-width: none;
+}
+
+.defend-zones {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.defend-zones img {
+  max-width: none;
+}
+
+.kyiv {
+  pointer-events: none;
+}
+
+.main__map.big-cities--active .big-city {
+  opacity: 1;
+}
+
+.main__map.big-cities--active:hover .main__district::after {
+  display: none;
+}
+
+.main__map.big-cities--active:hover .main__district.main__district--active::after {
+  display: block;
+}
+
+.main__map.big-cities--active .small-city {
+  background-color: #2A9DF0;
+}
+
+.main__map.big-cities--active .small-city::after {
+  color: #2A9DF0;
+}
+
+.main__map.big-cities--active .main__district:hover .big-city {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+
+.main__map.small-cities--active .small-city {
+  opacity: 1;
+}
+
+.main__map.small-cities--active .big-city::after {
+  font-size: 14px;
+}
+
+.main__map.fired-cities--active .fired {
+  opacity: 1;
+}
+
+.main__map.fired-cities--active .fired::before {
+  opacity: 1;
+  -webkit-transform: translate(-40%, -40%);
+          transform: translate(-40%, -40%);
+}
+
+.main__map.defend-zones--active .defend-zones {
+  opacity: 1;
+}
+
+.main__map.occupied--active .fighting-zone {
+  opacity: 1;
+}
+
+.main__map.occupied--active .kherson {
+  background-color: #FF3939;
+}
+
+.main__map.occupied--active .kherson::after {
+  color: #FF3939;
+}
+
+.main__map.attack-zones--active .attack-zones {
+  opacity: 1;
+}
+
+.main__map.districts--active:hover .main__district::after {
+  opacity: 1;
+}
+
+.main__map.safe-zones--active .main__district svg path {
+  -webkit-box-shadow: -4px -1px 6px rgba(0, 0, 0, 0.25);
+          box-shadow: -4px -1px 6px rgba(0, 0, 0, 0.25);
+}
+
+.main__map.safe-zones--active .main__district::after {
+  color: #FFF;
+}
+
+.main__map.safe-zones--active .zakarpatska path {
+  fill: #8AA4FF;
+  stroke: #8AA4FF;
+}
+
+.main__map.safe-zones--active .lvivska path {
+  fill: #1045FF;
+  stroke: #1045FF;
+}
+
+.main__map.safe-zones--active .volynska path {
+  fill: #1045FF;
+  stroke: #1045FF;
+}
+
+.main__map.safe-zones--active .ivano-frankivska path {
+  fill: #1045FF;
+  stroke: #1045FF;
+}
+
+.main__map.safe-zones--active .ternopilska path {
+  fill: #1045FF;
+  stroke: #1045FF;
+}
+
+.main__map.safe-zones--active .chernivetska path {
+  fill: #8AA4FF;
+  stroke: #8AA4FF;
+}
+
+.main__map.safe-zones--active .rivnenska path {
+  fill: #1045FF;
+  stroke: #1045FF;
+}
+
+.main__map.safe-zones--active .khmelnytska path {
+  fill: #032BBA;
+  stroke: #032BBA;
+}
+
+.main__map.safe-zones--active .zhytomyrska {
+  fill: #001E88;
+  stroke: #001E88;
+}
+
+.main__map.safe-zones--active .vinnytska path {
+  fill: #032BBA;
+  stroke: #032BBA;
+}
+
+.main__map.safe-zones--active .kyivska path {
+  fill: #010A2B;
+  stroke: #010A2B;
+}
+
+.main__map.safe-zones--active .kyiv path {
+  fill: #000E40;
+  stroke: #000E40;
+}
+
+.main__map.safe-zones--active .odeska path {
+  fill: #000E40;
+  stroke: #000E40;
+}
+
+.main__map.safe-zones--active .cherkaska path {
+  fill: #001E88;
+  stroke: #001E88;
+}
+
+.main__map.safe-zones--active .kirovogradska path {
+  fill: #001E88;
+  stroke: #001E88;
+}
+
+.main__map.safe-zones--active .mykolayivska path {
+  fill: #010A2B;
+  stroke: #010A2B;
+}
+
+.main__map.safe-zones--active .chernigivska path {
+  fill: #010A2B;
+  stroke: #010A2B;
+}
+
+.main__map.safe-zones--active .sumska path {
+  fill: #000E40;
+  stroke: #000E40;
+}
+
+.main__map.safe-zones--active .poltavska path {
+  fill: #001E88;
+  stroke: #001E88;
+}
+
+.main__map.safe-zones--active .dniprovska path {
+  fill: #001E88;
+  stroke: #001E88;
+}
+
+.main__map.safe-zones--active .khersonska path {
+  fill: #000;
+  stroke: #000;
+}
+
+.main__map.safe-zones--active .krym path {
+  fill: #000;
+  stroke: #000;
+}
+
+.main__map.safe-zones--active .kharkivska path {
+  fill: #010A2B;
+  stroke: #010A2B;
+}
+
+.main__map.safe-zones--active .zaporizka path {
+  fill: #000E40;
+  stroke: #000E40;
+}
+
+.main__map.safe-zones--active .donetska path {
+  fill: #000;
+  stroke: #000;
+}
+
+.main__map.safe-zones--active .lughanska path {
+  fill: #000;
+  stroke: #000;
+}
+
+.main__map.borders--active .main__district path {
+  stroke: #93AAFF;
+}
+
+.main__map .main__district.main__district--active {
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(3);
+          transform: translate(-50%, -50%) scale(3);
+  -webkit-transition-delay: 0ms;
+          transition-delay: 0ms;
+}
+
+.main__map .main__district.main__district--active path {
+  fill: #FFF;
+  stroke: none;
+  -webkit-transition-delay: 0ms;
+          transition-delay: 0ms;
+}
+
+.main__map .main__district.main__district--active path:hover {
+  -webkit-transform: none;
+          transform: none;
+}
+
+.main__map .main__district.main__district--active svg:hover {
+  -webkit-transform: none;
+          transform: none;
+}
+
+.main__map .main__district.main__district--active:hover svg path, .main__map .main__district.main__district--active:hover .fighting-zone, .main__map .main__district.main__district--active:hover .big-city, .main__map .main__district.main__district--active:hover .small-cities {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
+.main__map .main__district.main__district--active::before {
+  content: "";
+  position: absolute;
+  right: -2000px;
+  top: -2000px;
+  width: 4000px;
+  height: 4000px;
+  background-color: #000;
+  opacity: 0.5;
+  pointer-events: visible;
+  z-index: -1;
+  display: none;
+}
+
+.main__map .main__district.main__district--active::after {
+  opacity: 1;
+  left: 54%;
+  bottom: 50%;
+  top: auto;
+  right: auto;
+  color: #FFF;
+  font-size: 55px;
+  -webkit-transform: translate(0%, 0%) scale(0.3);
+          transform: translate(0%, 0%) scale(0.3);
+}
+
+.main__map .main__district.main__district--active .big-city {
+  background-color: #A70000;
+  z-index: 5;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.main__map .main__district.main__district--active .big-city::after {
+  color: #A70000;
+}
+
+.main__map .main__district.main__district--active .small-city::after {
+  color: #000;
+}
+
+.main__map .main__district.main__district--active .small-city.black::after {
+  color: #CECECE;
+}
+
+.main__map .main__district.main__district--active .small-city.grey::after {
+  color: #CECECE;
+}
+
+.main__map .kyiv.main__district--active {
+  left: 47%;
+  z-index: 3;
+}
+
+.main__map .kyiv.main__district--active path {
+  stroke: #FFF;
+  stroke-width: 5px;
+}
+
+.zoom-1 .main__district:hover svg path, .zoom-1 .main__district:hover .fighting-zone, .zoom-1 .main__district:hover .big-city, .zoom-1 .main__district:hover .small-cities, .zoom-2 .main__district:hover svg path, .zoom-2 .main__district:hover .fighting-zone, .zoom-2 .main__district:hover .big-city, .zoom-2 .main__district:hover .small-cities {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
+
+.zoom-1 .main__map {
+  width: 100%;
+  -webkit-transform: scale(2) translate(27%, 30%);
+          transform: scale(2) translate(27%, 30%);
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.zoom-1 .main__map .main__district.main__district--active {
+  top: auto;
+  bottom: auto;
+  left: auto;
+  right: auto;
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+  position: fixed;
+}
+
+.zoom-2 .main__map {
+  width: 100%;
+  -webkit-transform: scale(3) translate(40%, 40%);
+          transform: scale(3) translate(40%, 40%);
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.zoom-2 .main__map .main__district.main__district--active {
+  top: auto;
+  bottom: auto;
+  left: auto;
+  right: auto;
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+  position: fixed;
+}
+
+.map__wrapper {
+  width: auto;
+  overflow: visible;
+  height: auto;
+}
+
+.map__wrapper.zoom-1, .map__wrapper.zoom-2 {
+  width: 100%;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.anim-1 {
+  -webkit-transition-delay: .03s;
+          transition-delay: .03s;
+}
+
+.anim-2 {
+  -webkit-transition-delay: .06s;
+          transition-delay: .06s;
+}
+
+.anim-3 {
+  -webkit-transition-delay: .09s;
+          transition-delay: .09s;
+}
+
+.anim-4 {
+  -webkit-transition-delay: .12s;
+          transition-delay: .12s;
+}
+
+.anim-5 {
+  -webkit-transition-delay: .15s;
+          transition-delay: .15s;
+}
+
+.anim-6 {
+  -webkit-transition-delay: .18s;
+          transition-delay: .18s;
+}
+
+.anim-7 {
+  -webkit-transition-delay: .21s;
+          transition-delay: .21s;
+}
+
+.anim-8 {
+  -webkit-transition-delay: .24s;
+          transition-delay: .24s;
+}
+
+.anim-9 {
+  -webkit-transition-delay: .27s;
+          transition-delay: .27s;
+}
+
+.anim-10 {
+  -webkit-transition-delay: .3s;
+          transition-delay: .3s;
+}
+
+.anim-11 {
+  -webkit-transition-delay: .33s;
+          transition-delay: .33s;
+}
+
+.anim-12 {
+  -webkit-transition-delay: .36s;
+          transition-delay: .36s;
+}
+
+.anim-13 {
+  -webkit-transition-delay: .39s;
+          transition-delay: .39s;
+}
+
+.anim-14 {
+  -webkit-transition-delay: .42s;
+          transition-delay: .42s;
+}
+
+.anim-15 {
+  -webkit-transition-delay: .45s;
+          transition-delay: .45s;
+}
+
+.anim-16 {
+  -webkit-transition-delay: .48s;
+          transition-delay: .48s;
+}
+
+.anim-17 {
+  -webkit-transition-delay: .51s;
+          transition-delay: .51s;
+}
+
+.anim-18 {
+  -webkit-transition-delay: .54s;
+          transition-delay: .54s;
+}
+
+.anim-19 {
+  -webkit-transition-delay: .57s;
+          transition-delay: .57s;
+}
+
+.anim-20 {
+  -webkit-transition-delay: .6s;
+          transition-delay: .6s;
+}
+
+.anim-21 {
+  -webkit-transition-delay: .63s;
+          transition-delay: .63s;
+}
+
+.anim-22 {
+  -webkit-transition-delay: .66s;
+          transition-delay: .66s;
+}
+
+.anim-23 {
+  -webkit-transition-delay: .69s;
+          transition-delay: .69s;
+}
+
+.anim-24 {
+  -webkit-transition-delay: .72s;
+          transition-delay: .72s;
+}
+
+.anim-25 {
+  -webkit-transition-delay: .75s;
+          transition-delay: .75s;
+}
+
+.anim-26 {
+  -webkit-transition-delay: .80s;
+          transition-delay: .80s;
+}
+
+.anim-27 {
+  -webkit-transition-delay: .83s;
+          transition-delay: .83s;
+}
+
+.anim-28 {
+  -webkit-transition-delay: .88s;
+          transition-delay: .88s;
+}
+
+.anim-29 {
+  -webkit-transition-delay: .95s;
+          transition-delay: .95s;
+}
+
+.anim-30 {
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+
+.main__district.zakarpatska svg path {
+  -webkit-transition: fill .3s ease 1s, stroke .3s ease 1s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease 1s, stroke .3s ease 1s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease 1s, stroke .3s ease 1s, transform .3s ease 0s;
+  transition: fill .3s ease 1s, stroke .3s ease 1s, transform .3s ease 0s, -webkit-transform .3s ease 0s;
+}
+
+.main__district.lvivska svg path {
+  -webkit-transition: fill .3s ease .9s, stroke .3s ease .9s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .9s, stroke .3s ease .9s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .9s, stroke .3s ease .9s, transform .3s ease 0s;
+  transition: fill .3s ease .9s, stroke .3s ease .9s, transform .3s ease 0s, -webkit-transform .3s ease 0s;
+}
+
+.main__district.volynska svg path {
+  -webkit-transition: fill .3s ease .8s, stroke .3s ease .8s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .8s, stroke .3s ease .8s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .8s, stroke .3s ease .8s, transform .3s ease 0s;
+  transition: fill .3s ease .8s, stroke .3s ease .8s, transform .3s ease 0s, -webkit-transform .3s ease 0s;
+}
+
+.main__district.ivano-frankivska svg path {
+  -webkit-transition: fill .3s ease .69s, stroke .3s ease .69s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .69s, stroke .3s ease .69s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .69s, stroke .3s ease .69s, transform .3s ease 0s;
+  transition: fill .3s ease .69s, stroke .3s ease .69s, transform .3s ease 0s, -webkit-transform .3s ease 0s;
+}
+
+.main__district.ternopilska svg path {
+  -webkit-transition: fill .3s ease .66s, stroke .3s ease .66s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .66s, stroke .3s ease .66s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .66s, stroke .3s ease .66s, transform .3s ease 0s;
+  transition: fill .3s ease .66s, stroke .3s ease .66s, transform .3s ease 0s, -webkit-transform .3s ease 0s;
+}
+
+.main__district.chernivetska svg path {
+  -webkit-transition: fill .3s ease .63s, stroke .3s ease .63s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .63s, stroke .3s ease .63s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .63s, stroke .3s ease .63s, transform .3s ease 0s;
+  transition: fill .3s ease .63s, stroke .3s ease .63s, transform .3s ease 0s, -webkit-transform .3s ease 0s;
+}
+
+.main__district.rivnenska svg path {
+  -webkit-transition: fill .3s ease .6s, stroke .3s ease .6s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .6s, stroke .3s ease .6s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .6s, stroke .3s ease .6s, transform .3s ease 0s;
+  transition: fill .3s ease .6s, stroke .3s ease .6s, transform .3s ease 0s, -webkit-transform .3s ease 0s;
+}
+
+.main__district.khmelnytska svg path {
+  -webkit-transition: fill .3s ease .57s, stroke .3s ease .57s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .57s, stroke .3s ease .57s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .57s, stroke .3s ease .57s, transform .3s ease 0s;
+  transition: fill .3s ease .57s, stroke .3s ease .57s, transform .3s ease 0s, -webkit-transform .3s ease 0s;
+}
+
+.main__district.zhytomyrska svg path {
+  -webkit-transition: fill .3s ease .54s, stroke .3s ease .54s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .54s, stroke .3s ease .54s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .54s, stroke .3s ease .54s, transform .3s ease 0s;
+  transition: fill .3s ease .54s, stroke .3s ease .54s, transform .3s ease 0s, -webkit-transform .3s ease 0s;
+}
+
+.main__district.vinnytska svg path {
+  -webkit-transition: fill .3s ease .51s, stroke .3s ease .51s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .51s, stroke .3s ease .51s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .51s, stroke .3s ease .51s, transform .3s ease 0s;
+  transition: fill .3s ease .51s, stroke .3s ease .51s, transform .3s ease 0s, -webkit-transform .3s ease 0s;
+}
+
+.main__district.kyivska svg path {
+  -webkit-transition: fill .3s ease .48s, stroke .3s ease .48s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .48s, stroke .3s ease .48s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .48s, stroke .3s ease .48s, transform .3s ease 0s;
+  transition: fill .3s ease .48s, stroke .3s ease .48s, transform .3s ease 0s, -webkit-transform .3s ease 0s;
+}
+
+.main__district.kyiv svg path {
+  -webkit-transition: fill .3s ease .45s, stroke .3s ease .45s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .45s, stroke .3s ease .45s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .45s, stroke .3s ease .45s, transform .3s ease 0s;
+  transition: fill .3s ease .45s, stroke .3s ease .45s, transform .3s ease 0s, -webkit-transform .3s ease 0s;
+}
+
+.main__district.odeska svg path {
+  -webkit-transition: fill .3s ease .42s, stroke .3s ease .42s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .42s, stroke .3s ease .42s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .42s, stroke .3s ease .42s, transform .3s ease 0s;
+  transition: fill .3s ease .42s, stroke .3s ease .42s, transform .3s ease 0s, -webkit-transform .3s ease 0s;
+}
+
+.main__district.cherkaska svg path {
+  -webkit-transition: fill .3s ease .39s, stroke .3s ease .39s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .39s, stroke .3s ease .39s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .39s, stroke .3s ease .39s, transform .3s ease 0s;
+  transition: fill .3s ease .39s, stroke .3s ease .39s, transform .3s ease 0s, -webkit-transform .3s ease 0s;
+}
+
+.main__district.kirovogradska svg path {
+  -webkit-transition: fill .3s ease .36s, stroke .3s ease .36s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .36s, stroke .3s ease .36s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .36s, stroke .3s ease .36s, transform .3s ease 0s;
+  transition: fill .3s ease .36s, stroke .3s ease .36s, transform .3s ease 0s, -webkit-transform .3s ease 0s;
+}
+
+.main__district.mykolayivska svg path {
+  -webkit-transition: fill .3s ease .33s, stroke .3s ease .33s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .33s, stroke .3s ease .33s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .33s, stroke .3s ease .33s, transform .3s ease 0s;
+  transition: fill .3s ease .33s, stroke .3s ease .33s, transform .3s ease 0s, -webkit-transform .3s ease 0s;
+}
+
+.main__district.chernigivska svg path {
+  -webkit-transition: fill .3s ease .3s, stroke .3s ease .3s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .3s, stroke .3s ease .3s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .3s, stroke .3s ease .3s, transform .3s ease 0s;
+  transition: fill .3s ease .3s, stroke .3s ease .3s, transform .3s ease 0s, -webkit-transform .3s ease 0s;
+}
+
+.main__district.sumska svg path {
+  -webkit-transition: fill .3s ease .27s, stroke .3s ease .27s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .27s, stroke .3s ease .27s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .27s, stroke .3s ease .27s, transform .3s ease 0s;
+  transition: fill .3s ease .27s, stroke .3s ease .27s, transform .3s ease 0s, -webkit-transform .3s ease 0s;
+}
+
+.main__district.poltavska svg path {
+  -webkit-transition: fill .3s ease .24s, stroke .3s ease .24s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .24s, stroke .3s ease .24s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .24s, stroke .3s ease .24s, transform .3s ease 0s;
+  transition: fill .3s ease .24s, stroke .3s ease .24s, transform .3s ease 0s, -webkit-transform .3s ease 0s;
+}
+
+.main__district.dniprovska svg path {
+  -webkit-transition: fill .3s ease .21s, stroke .3s ease .21s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .21s, stroke .3s ease .21s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .21s, stroke .3s ease .21s, transform .3s ease 0s;
+  transition: fill .3s ease .21s, stroke .3s ease .21s, transform .3s ease 0s, -webkit-transform .3s ease 0s;
+}
+
+.main__district.khersonska svg path {
+  -webkit-transition: fill .3s ease .18s, stroke .3s ease .18s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .18s, stroke .3s ease .18s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .18s, stroke .3s ease .18s, transform .3s ease 0s;
+  transition: fill .3s ease .18s, stroke .3s ease .18s, transform .3s ease 0s, -webkit-transform .3s ease 0s;
+}
+
+.main__district.krym svg path {
+  -webkit-transition: fill .3s ease .15s, stroke .3s ease .15s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .15s, stroke .3s ease .15s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .15s, stroke .3s ease .15s, transform .3s ease 0s;
+  transition: fill .3s ease .15s, stroke .3s ease .15s, transform .3s ease 0s, -webkit-transform .3s ease 0s;
+}
+
+.main__district.kharkivska svg path {
+  -webkit-transition: fill .3s ease .12s, stroke .3s ease .12s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .12s, stroke .3s ease .12s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .12s, stroke .3s ease .12s, transform .3s ease 0s;
+  transition: fill .3s ease .12s, stroke .3s ease .12s, transform .3s ease 0s, -webkit-transform .3s ease 0s;
+}
+
+.main__district.zaporizka svg path {
+  -webkit-transition: fill .3s ease .09s, stroke .3s ease .09s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .09s, stroke .3s ease .09s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .09s, stroke .3s ease .09s, transform .3s ease 0s;
+  transition: fill .3s ease .09s, stroke .3s ease .09s, transform .3s ease 0s, -webkit-transform .3s ease 0s;
+}
+
+.main__district.donetska svg path {
+  -webkit-transition: fill .3s ease .06s, stroke .3s ease .06s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .06s, stroke .3s ease .06s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .06s, stroke .3s ease .06s, transform .3s ease 0s;
+  transition: fill .3s ease .06s, stroke .3s ease .06s, transform .3s ease 0s, -webkit-transform .3s ease 0s;
+}
+
+.main__district.lughanska svg path {
+  -webkit-transition: fill .3s ease .03s, stroke .3s ease .03s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .03s, stroke .3s ease .03s, -webkit-transform .3s ease 0s;
+  transition: fill .3s ease .03s, stroke .3s ease .03s, transform .3s ease 0s;
+  transition: fill .3s ease .03s, stroke .3s ease .03s, transform .3s ease 0s, -webkit-transform .3s ease 0s;
+}
+
+.chernigiv {
+  left: 44px;
+  top: 91px;
+}
+
+.chernigiv::after {
+  content: "Чернігів";
+}
+
+.uzhgorod {
+  left: 18px;
+  top: 57px;
+}
+
+.uzhgorod::after {
+  content: "Ужгород";
+}
+
+.lviv {
+  left: 86px;
+  top: 74px;
+}
+
+.lviv::after {
+  content: "Львів";
+}
+
+.lutsk {
+  left: 113px;
+  top: 122px;
+}
+
+.lutsk::after {
+  content: "Луцьк";
+}
+
+.ivano-frankivsk {
+  left: 64px;
+  top: 58px;
+}
+
+.ivano-frankivsk::after {
+  content: "Івано-Франківськ";
+}
+
+.ternopil {
+  left: 48px;
+  top: 70px;
+}
+
+.ternopil::after {
+  content: "Тернопіль";
+}
+
+.chernivtsi {
+  left: 64px;
+  top: 35px;
+}
+
+.chernivtsi::after {
+  content: "Чернівці";
+}
+
+.rivne {
+  left: 66px;
+  top: 137px;
+}
+
+.rivne::after {
+  content: "Рівне";
+}
+
+.khmelnytsk {
+  left: 50px;
+  top: 120px;
+}
+
+.khmelnytsk::after {
+  content: "Хмельницьк";
+}
+
+.zhytomyr {
+  left: 92px;
+  top: 144px;
+}
+
+.zhytomyr::after {
+  content: "Житомир";
+}
+
+.vinnytsa {
+  left: 65px;
+  top: 66px;
+}
+
+.vinnytsa::after {
+  content: "Вінниця";
+}
+
+.kyiv-city {
+  left: 82px;
+  top: 114px;
+}
+
+.kyiv-city::after {
+  content: "Київ";
+}
+
+.odesa {
+  left: 160px;
+  top: 171px;
+}
+
+.odesa::after {
+  content: "Одеса";
+}
+
+.cherkasy {
+  left: 160px;
+  top: 76px;
+}
+
+.cherkasy::after {
+  content: "Черкаси";
+}
+
+.kropyvnytskiy {
+  left: 173px;
+  top: 69px;
+}
+
+.kropyvnytskiy::after {
+  content: "Кропивницький";
+}
+
+.mykolayiv {
+  left: 115px;
+  top: 120px;
+}
+
+.mykolayiv::after {
+  content: "Миколаїв";
+}
+
+.sumy {
+  left: 122px;
+  top: 158px;
+}
+
+.sumy::after {
+  content: "Суми";
+}
+
+.poltava {
+  left: 161px;
+  top: 93px;
+}
+
+.poltava::after {
+  content: "Полтава";
+}
+
+.dnipro {
+  left: 124px;
+  top: 80px;
+}
+
+.dnipro::after {
+  content: "Дніпро";
+}
+
+.kherson {
+  left: 89px;
+  top: 74px;
+}
+
+.kherson::after {
+  content: "Херсон";
+}
+
+.simferopol {
+  left: 103px;
+  top: 118px;
+}
+
+.simferopol::after {
+  content: "Сімферополь";
+}
+
+.kharkiv {
+  left: 108px;
+  top: 53px;
+}
+
+.kharkiv::after {
+  content: "Харків";
+}
+
+.zaporizha {
+  left: 62px;
+  top: 30px;
+}
+
+.zaporizha::after {
+  content: "Запоріжжя";
+}
+
+.donetsk {
+  left: 60px;
+  top: 125px;
+}
+
+.donetsk::after {
+  content: "Донецьк";
+}
+
+.lughansk {
+  left: 95px;
+  top: 146px;
+}
+
+.lughansk::after {
+  content: "Луганськ";
+}
+
+.zakarpatska {
+  top: 354px;
+  left: 0;
+}
+
+.zakarpatska::after {
+  content: "Закарпатська область";
+  left: 40%;
+}
+
+.lvivska {
+  top: 188px;
+  left: 35px;
+}
+
+.lvivska::after {
+  content: "Львівська область";
+}
+
+.volynska {
+  top: 46px;
+  left: 100px;
+}
+
+.volynska::after {
+  content: "Волинська область";
+  left: 55%;
+}
+
+.ivano-frankivska {
+  top: 307px;
+  left: 95px;
+}
+
+.ivano-frankivska::after {
+  content: "Івано-Франківська область";
+}
+
+.ternopilska {
+  top: 230px;
+  left: 176px;
+}
+
+.ternopilska::after {
+  content: "Тернопільська область";
+  left: 45%;
+}
+
+.chernivetska {
+  top: 395px;
+  left: 191px;
+}
+
+.chernivetska::after {
+  content: "Чернівецька область";
+  left: 40%;
+  top: 45%;
+}
+
+.rivnenska {
+  top: 48px;
+  left: 200px;
+}
+
+.rivnenska::after {
+  content: "Рівненська область";
+  left: 60%;
+}
+
+.khmelnytska {
+  top: 193px;
+  left: 272px;
+}
+
+.khmelnytska::after {
+  content: "Хмельницька область";
+}
+
+.zhytomyrska {
+  top: 78px;
+  left: 345px;
+}
+
+.zhytomyrska::after {
+  content: "Житомирська область";
+}
+
+.vinnytska {
+  top: 268px;
+  left: 357px;
+}
+
+.vinnytska::after {
+  content: "Вінницька область";
+}
+
+.kyivska {
+  top: 96px;
+  left: 487px;
+  z-index: 1;
+}
+
+.kyivska::after {
+  content: "Київська область";
+}
+
+.kyiv {
+  top: 186px;
+  left: 548px;
+}
+
+.kyiv path {
+  pointer-events: none;
+}
+
+.kyiv svg path:hover {
+  -webkit-transform: translate(0%, 0%);
+          transform: translate(0%, 0%);
+}
+
+.kyiv::after {
+  content: none;
+}
+
+.odeska {
+  top: 442px;
+  left: 413px;
+}
+
+.odeska::after {
+  content: "Одеська область";
+  left: 73%;
+  top: 45%;
+}
+
+.cherkaska {
+  top: 230px;
+  left: 509px;
+}
+
+.cherkaska::after {
+  content: "Черкаська область";
+  left: 65%;
+}
+
+.kirovogradska {
+  top: 335px;
+  left: 520px;
+}
+
+.kirovogradska::after {
+  content: "Кіровоградська область";
+  left: 60%;
+}
+
+.mykolayivska {
+  top: 441px;
+  left: 550px;
+}
+
+.mykolayivska::after {
+  content: "Миколаївська область";
+  top: 45%;
+  left: 60%;
+}
+
+.chernigivska {
+  top: 0;
+  left: 572px;
+}
+
+.chernigivska::after {
+  content: "Чернігівська область";
+}
+
+.sumska {
+  top: 0;
+  left: 737px;
+}
+
+.sumska::after {
+  content: "Сумська область";
+  left: 50%;
+  top: 60%;
+}
+
+.poltavska {
+  top: 199px;
+  left: 679px;
+}
+
+.poltavska::after {
+  content: "Полтавська область";
+  left: 60%;
+}
+
+.dniprovska {
+  top: 343px;
+  left: 740px;
+}
+
+.dniprovska::after {
+  content: "Дніпровська область";
+}
+
+.khersonska {
+  top: 507px;
+  left: 639px;
+}
+
+.khersonska::after {
+  content: "Херсонська область";
+  left: 60%;
+}
+
+.krym {
+  top: 642px;
+  left: 703px;
+}
+
+.krym::after {
+  content: "АР Крим";
+  left: 43%;
+}
+
+.kharkivska {
+  top: 211px;
+  left: 866px;
+}
+
+.kharkivska::after {
+  content: "Харківська область";
+  left: 60%;
+}
+
+.zaporizka {
+  top: 452px;
+  left: 824px;
+}
+
+.zaporizka::after {
+  content: "Запорізька область";
+  left: 55%;
+}
+
+.donetska {
+  top: 338px;
+  left: 981px;
+}
+
+.donetska::after {
+  content: "Донецька область";
+  left: 55%;
+}
+
+.lughanska {
+  top: 250px;
+  left: 1071px;
+}
+
+.lughanska::after {
+  content: "Луганська область";
+}
+
+@media (max-width: 1440px) {
+  .main {
+    max-height: 768px;
+  }
+  .main__map {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+}
+
+@media (max-width: 1366px) {
+  .main {
+    max-height: 768px;
+  }
+  .main__map {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+}
+
+@media (max-width: 500px) {
+  .main {
+    width: 100%;
+  }
+  .main__menu-icon {
+    width: 40px;
+    height: 32px;
+    padding: 0;
+    top: 25px;
+    right: 25px;
+    position: fixed;
+  }
+  .main__menu-icon.main__menu-icon--active .main__menu-line:first-child {
+    -webkit-transform: rotate(45deg) translateY(19px);
+            transform: rotate(45deg) translateY(19px);
+  }
+  .main__menu-icon.main__menu-icon--active .main__menu-line:last-child {
+    -webkit-transform: rotate(-45deg) translateY(-20px);
+            transform: rotate(-45deg) translateY(-20px);
+  }
+  .main__menu-line {
+    height: 4px;
+    border-radius: 3px;
+  }
+  .main__heading {
+    position: fixed;
+    top: 30px;
+    left: 20px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .main__heading-flag {
+    height: 22px;
+  }
+  .main__heading-text {
+    margin-left: 10px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .main__map {
+    min-width: 200%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-transform: scale(0.5) translateX(-50%);
+            transform: scale(0.5) translateX(-50%);
+    position: relative;
+    scrollbar-width: none;
+  }
+  .main__map::-webkit-scrollbar {
+    display: none;
+  }
+  .main__map .main__district.main__district--active {
+    position: fixed;
+  }
+  .main__map .main__district.main__district--active::after {
+    left: -66px;
+    right: 0;
+    top: -140px;
+  }
+  .main__map .main__district.main__district--active .big-city::after {
+    font-size: 10px;
+  }
+  .main__map.main__map-district--active {
+    overflow: visible;
+  }
+  .main__map svg {
+    stroke: #0024A4;
+    stroke-width: 1px;
+  }
+  .main__map .kyiv {
+    stroke: #000E40;
+    stroke-width: 2px;
+  }
+  .main__map .main__image svg {
+    stroke: none;
+  }
+  .main__map.districts--active .main__district::after {
+    opacity: 1;
+  }
+  .dimmer {
+    min-height: 300vh;
+  }
+  .kills {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+  }
+  .kills__heading {
+    font-size: 15px;
+    line-height: 18px;
+    max-width: 95px;
+    color: #FFF;
+    text-align: left;
+  }
+  .kills__number {
+    font-size: 48px;
+    line-height: 52px;
+    color: #FF4F4F;
+  }
+  .kills__link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 22px 30px;
+    width: 100%;
+    border-radius: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .kills__link::after {
+    top: 10px;
+    right: 10px;
+    background-image: url(../images/icons/more-white.svg);
+  }
+  .menu {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .menu__header {
+    margin-bottom: 10px;
+  }
+  .menu__header .menu__heading-left, .menu__header .menu__heading-center {
+    margin-bottom: 0;
+  }
+  .menu__header-icon {
+    margin-right: 15px;
+    height: 30px;
+  }
+  .menu__heading-left, .menu__heading-center {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .menu__items-icons {
+    margin: 0 auto;
+    max-width: 348px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    grid-gap: 20px;
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+  .menu__item-icon {
+    border-radius: 30px;
+    height: 100px;
+    width: auto;
+    margin-bottom: 0px;
+    overflow: hidden;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    width: 100px;
+  }
+  .menu__item-icon:hover {
+    background-color: #AEAEAE;
+  }
+  .menu__icon-img {
+    height: 30px;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .menu__icon-text {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .menu__icon-text-small {
+    font-weight: bold;
+    font-size: 11px;
+    line-height: 13px;
+  }
+  .menu__list-text {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .menu__list-parag {
+    text-align: justify;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .menu__close {
+    top: 25px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+  }
+  .menu__support-heading {
+    color: #666;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 15px;
+  }
+  .menu__support-icon + .menu__support-icon {
+    margin-left: 15px;
+  }
+  .control-hours__heading {
+    padding-right: 40px;
+    max-width: 500px;
+  }
+  .control-hours__item {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .news {
+    padding: 30px 12px 30px 22px;
+  }
+  .news__item {
+    padding: 25px 22px;
+    background-color: #ECECEC;
+    border-radius: 30px;
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .news__item-heading {
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .news__item-descr {
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  .news__item-source {
+    font-weight: 500;
+    display: block;
+    word-wrap: break-word;
+    color: #000;
+    text-decoration: none;
+    max-width: 412px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .news__item-source::before {
+    content: "Джерело: ";
+    font-weight: 600;
+  }
+  .news__item-time {
+    position: absolute;
+    bottom: 5px;
+    right: 15px;
+  }
+  .mini-blog {
+    text-align: left;
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .mini-blog .wrapper {
+    text-align: left;
+  }
+  .mini-blog .title {
+    font-size: 18px;
+    line-height: 20px;
+  }
+  .mini-blog .subtitle {
+    font-size: 16px;
+    line-height: 18px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+  .mini-blog .subtitle-list {
+    padding-left: 20px;
+  }
+  .mini-blog .text {
+    font-size: 14px;
+  }
+  .mini-blog .icon {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  .mini-blog .icon-title-wrapper {
+    margin-top: 30px;
+  }
+  .mini-blog .link-btn {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+  }
+  .mini-blog .step {
+    font-size: 14px;
+    line-height: 26px;
+  }
+  .mini-blog .step:last-child::after {
+    right: -10px;
+    left: auto;
+    width: 14px;
+    height: 13px;
+    background-size: contain;
+    bottom: 3px;
+    top: auto;
+  }
+  .mini-blog .step + .step {
+    margin-left: 20px;
+  }
+  .mini-blog .step + .step::before {
+    left: -20px;
+    height: 14px;
+    width: 6px;
+    background-size: contain;
+  }
+  .mini-blog .list {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .mini-blog .list li {
+    margin-bottom: 15px;
+  }
+  .mini-blog .wide {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .mini-blog .wide-list {
+    margin-bottom: 20px;
+    padding-left: 40px;
+  }
+  .mini-blog .wide .text {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .mini-blog .level-2 {
+    margin-left: 20px;
+  }
+  .mini-blog .link {
+    font-size: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .kills-window {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+    width: 100%;
+    padding: 13px 30px 20px 20px;
+    height: auto;
+    background-color: #fff;
+    border-radius: 0px;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    -webkit-transform: translateY(200%) translateX(0%);
+            transform: translateY(200%) translateX(0%);
+  }
+  .kills-window.kills-window--active {
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+  }
+  .kills-window__heading {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+  }
+  .kills-window__line {
+    background-color: #AEAEAE;
+    height: 1px;
+    margin-bottom: 30px;
+  }
+  .kills-window__item {
+    margin-bottom: 6px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .kills-window__text {
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .kills-window__icon {
+    margin-right: 10px;
+    -o-object-fit: contain;
+       object-fit: contain;
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+  .kills-window__number {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .kills-window__close {
+    right: 30px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+  }
+  .last-update {
+    display: none;
+  }
+  .main .map-filters {
+    position: fixed;
+    bottom: 110px;
+    -webkit-box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+    padding: 0px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    left: 10px;
+    right: auto;
+    max-width: 100%;
+  }
+  .main .map-filters__header {
+    margin-bottom: 0;
+    height: 100%;
+  }
+  .main .map-filters__icon svg {
+    margin-left: 2px;
+    max-width: 30px;
+  }
+  .main .map-filters__heading {
+    display: none;
+  }
+  .main .map-filters__items {
+    top: 200px;
+  }
+  .main .map-filters__icon img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-transform: scale(0.7) translateX(-24%);
+            transform: scale(0.7) translateX(-24%);
+  }
+  .main .map-filters.map-filters--active {
+    left: 0;
+    right: auto;
+    bottom: 330px;
+    width: 100%;
+    z-index: 1001;
+    border-radius: 0px;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .main .map-filters.map-filters--active .map-filters__heading {
+    display: block;
+    font-size: 16px;
+  }
+  .main .map-filters.map-filters--active .map-filters__icon {
+    margin-right: 15px;
+  }
+  .main .map-filters.map-filters--active .map-filters__items {
+    background-color: #fff;
+    top: 50px;
+  }
+  .main .map-filters.map-filters--white .map-filters__header {
+    border-radius: 0px;
+  }
+  .main .map-filters.map-filters--white path {
+    fill: #232323;
+  }
+  .main .map-filters__items {
+    right: 0;
+    left: 0;
+    width: 100%;
+    min-height: 300px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-left: 0;
+  }
+  .main .map-filters__item {
+    width: 100%;
+  }
+  .main .map-filters:hover .map-filters__header {
+    width: auto;
+    background-color: #FFF;
+    border-radius: 50%;
+  }
+  .main .map-filters:hover.map-filters--active .map-filters__header {
+    border-radius: 0;
+  }
+  .zoom {
+    position: fixed;
+    bottom: 100px;
+    right: 15px;
+  }
+  .zoom-1 .main__map {
+    width: 100%;
+    -webkit-transform: scale(1.5) translate(16%, 30%);
+            transform: scale(1.5) translate(16%, 30%);
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+  }
+  .zoom-1 .main__map .main__district.main__district--active {
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+    position: fixed;
+  }
+  .zoom-2 .main__map {
+    width: 100%;
+    -webkit-transform: scale(2) translate(25%, 40%);
+            transform: scale(2) translate(25%, 40%);
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+  }
+  .zoom-2 .main__map .main__district.main__district--active {
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+    position: fixed;
+  }
+}
+
+@media (max-width: 385px) {
+  .menu {
+    padding: 20px 15px 20px 15px;
+  }
+  .menu__items-icons {
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    grid-gap: 10px;
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+  .menu__item-icon {
+    height: auto;
+    width: 30%;
+    background-color: transparent;
+    border-radius: 10px;
+  }
+  .menu__item-icon:hover {
+    background-color: #ECECEC;
+  }
+  .menu__icon-img {
+    min-height: 68px;
+    width: 68px;
+    padding: 16px 16px;
+    border-radius: 40%;
+    background-color: #ECECEC;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .menu__icon-text {
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+  }
+  .menu__icon-text-small {
+    font-weight: bold;
+    font-size: 11px;
+    line-height: 13px;
+  }
+  .menu__item-button {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+  .menu__support {
+    position: absolute;
+    bottom: 22px;
+  }
+  .menu__support-heading {
+    color: #666;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 20px;
+  }
+  .menu__support-icons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .menu__support-icon {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    background-color: #ECECEC;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+  }
+  .menu__support-icon + .menu__support-icon {
+    margin-left: 15px;
+  }
+  .menu__support-icon path {
+    color: #232323;
+  }
+  .menu__support-icon:hover {
+    background-color: #AEAEAE;
+  }
+  .menu__support-icon:hover .telegram-icon path {
+    fill: #0088cc;
+  }
+  .menu__support-icon:hover .mail-icon path {
+    fill: #ff4c4c;
+  }
+  .menu__close {
+    top: 15px;
+  }
+  .control-hours__heading {
+    padding-right: 40px;
+    font-size: 18px;
+  }
+  .control-hours__item {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .main__map {
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+    min-width: 250%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

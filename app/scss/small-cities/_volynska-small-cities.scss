@@ -1,0 +1,91 @@
+.ratne {
+    top: 29px;
+    left: 56px;
+    &::after {
+        content: "Ратне";
+    }
+}
+.lubeshiv {
+    top: 19px;
+    left: 117px;
+    &::after {
+        content: "Любешів";
+    }
+}
+.kamin-kashirckiy {
+    top: 31px;
+    left: 79px;
+    &::after {
+        content: "Камінь-Каширський";
+    }
+}
+.shatsk {
+    top: 46px;
+    left: 19px;
+    &::after {
+        content: "Шацьк";
+    }
+}
+.luboml {
+    top: 73px;
+    left: 23px;
+    &::after {
+        content: "Любомль";
+    }
+}
+.starovoytove {
+    top: 77px;
+    left: 11px;
+    &::after {
+        content: "Старовойтове";
+    }
+}
+.kovel {
+    top: 74px;
+    left: 70px;
+    &::after {
+        content: "Ковель";
+    }
+}
+.manevychi {
+    top: 72px;
+    left: 124px;
+    &::after {
+        content: "Маневичі";
+    }
+}
+.rozhysche {
+    top: 103px;
+    left: 109px;
+    &::after {
+        content: "Рожище";
+    }
+}
+.kivertsy {
+    top: 112px;
+    left: 128px;
+    &::after {
+        content: "Ківерці";
+    }
+}
+.volodymyr {
+    top: 119px;
+    left: 47px;
+    &::after {
+        content: "Володимир";
+    }
+}
+.novovolynskiy {
+    top: 133px;
+    left: 40px;
+    &::after {
+        content: "Нововолинськ";
+    }
+}
+.horohiv {
+    top: 152px;
+    left: 77px;
+    &::after {
+        content: "Горохів";
+    }
+}

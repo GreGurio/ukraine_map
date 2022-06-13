@@ -1,0 +1,63 @@
+.rohatyn {
+    top: 10px;
+    left: 70px;
+    &::after {
+        content: "Рогатин";
+    }
+}
+.burshtyn {
+    top: 27px;
+    left: 72px;
+    &::after {
+        content: "Бурштин";
+    }
+}
+.kalush {
+    top: 46px;
+    left: 57px;
+    &::after {
+        content: "Калуш";
+    }
+}
+.dolyna {
+    top: 57px;
+    left: 29px;
+    &::after {
+        content: "Долина";
+    }
+}
+.kolomiya {
+    top: 99px;
+    left: 96px;
+    &::after {
+        content: "Коломия";
+    }
+}
+.yaremche {
+    top: 106px;
+    left: 76px;
+    &::after {
+        content: "Яремче";
+    }
+}
+.snyatyn {
+    top: 106px;
+    left: 131px;
+    &::after {
+        content: "Снятин";
+    }
+}
+.polyanytsa {
+    top: 118px;
+    left: 59px;
+    &::after {
+        content: "Поляниця";
+    }
+}
+.vorohta {
+    top: 126px;
+    left: 67px;
+    &::after {
+        content: "Ворохта";
+    }
+}

@@ -1,0 +1,197 @@
+.mini-blog {
+    .wrapper {
+        padding: 0 2px 0;
+        text-align: justify;
+    }
+    h2 {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        color: #000;
+        margin: 20px 0px;
+    }
+    h3 {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        margin: 10px 0px;
+        color: #000;
+    }
+    p {
+          font-weight: normal;
+            font-size: 16px;
+            line-height: 22px;
+            text-align: justify;
+            margin-bottom: 10px;
+    }
+    //left icon
+    .wp-block-group figure {
+        margin-right: 15px;
+    }
+    .wp-block-image {
+        margin: 0;
+        margin-right: 10px;
+    }
+    //group (titles with icons)
+    .wp-block-group, .wp-block-group__inner-container {
+        display: flex;
+        align-items: center;
+        margin: 20px 0px;
+        h2, h3 {
+            padding: 0;
+            margin: 0;
+        }
+    }
+    //container
+    .ab-block-container {
+        display: block;
+        background-color: $grey;    
+        font-family: 'Montserrat';
+        border-radius: 17px;
+        padding: 20px;
+        margin: 20px 0px;
+        white-space: initial;
+        p {
+            font-size: 18px;
+            font-weight: 500;
+        }
+    }
+    //step
+    .wp-block-preformatted {
+        display: inline;
+        position: relative;
+        font-size: 16px;
+        line-height: 38px;
+        color: #000;
+        text-align: left;
+        font-weight: 500;
+        font-family: "Montserrat";
+        white-space: initial;
+        & + .wp-block-preformatted {
+            margin-left: 27px;
+            &::before {
+                position: absolute;
+                content: "";
+                left: -16px;
+                top: 0;
+                height: 17px;
+                width: 7px;
+                background-image: url(../images/icons/arrow-right.svg);
+            }
+        }
+    }
+    // button-links
+    .wp-block-button {
+        width: 100%;
+    }
+    .wp-block-button__link {
+        display: inline-block;
+        position: relative;
+        max-width: 100%;
+        padding: 15px 20px;
+        border-radius: 17px;
+        border: 2px solid $red;
+        background-color: transparent;
+        //text
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        color: #000;
+        word-wrap: break-word;
+        overflow: hidden;
+        //custom
+        margin: 10px 0px;
+        margin-right: 5px;
+        transition: all .3s;
+        // custom fill
+        &::before {
+            position: absolute;
+            z-index: -1;
+            content: "";
+            width: 0px;
+            height: 0px;
+            left: 0;
+            top: 50%;
+            background-color: $red;
+            border-radius: 13px;
+            transition: all .4s ease;
+        }
+        &:hover {
+            color: #FFF;
+            &::before {
+                top: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    //green link-btn
+    .is-style-outline .wp-block-button__link {
+        border-color: $green;
+        &::before {
+            background-color: $green;
+        }
+    }
+    ul {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: justify;
+        list-style: disc;
+        padding-left: 40px;
+        margin: 20px 0px;
+        li {
+            margin-bottom: 15px;
+        }
+    }
+    //columns items
+    .wp-block-columns {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+        p {
+            margin: 0;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+    //!!--custom link box--!!
+    .link-box {
+        display: inline-block;
+        padding: 15px 20px;
+        border-radius: 17px;
+        border: 2px solid $red;
+        margin-bottom: 15px;
+    }
+    .link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 22px;
+        color: #000;
+        text-decoration: none;
+        & + .link {
+            margin-top: 14px;
+        }
+        &:hover {
+            .link-text {
+                color: $red;
+            }
+        }
+    }
+    .link-text {
+        margin-left: 10px;
+        margin-right: 11px;
+        transition: all .3s;
+        font-weight: 500;
+    }
+    .mini-icon {
+        & + .mini-icon {
+            margin-left: 10px;
+        }
+    }
+}

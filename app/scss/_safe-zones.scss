@@ -1,0 +1,112 @@
+.main__map.safe-zones--active {
+    .main__district svg path {
+        box-shadow: -4px -1px 6px rgba(0, 0, 0, 0.25);
+    }
+    .main__district::after {
+        color: #FFF;
+    }
+    .zakarpatska path {
+        fill: #8AA4FF;
+        stroke: #8AA4FF;
+    }
+    .lvivska path {
+        fill: #1045FF;
+        stroke: #1045FF;
+    }
+    .volynska path {
+        fill: #1045FF;
+        stroke: #1045FF;
+    }
+    .ivano-frankivska path {
+        fill: #1045FF;
+        stroke: #1045FF;
+    }
+    .ternopilska path {
+        fill: #1045FF;
+        stroke: #1045FF;
+    }
+    .chernivetska path {
+        fill: #8AA4FF;
+        stroke: #8AA4FF;
+    }
+    .rivnenska path {
+        fill: #1045FF;
+        stroke: #1045FF;
+    }
+    .khmelnytska path {
+        fill: #032BBA;
+        stroke: #032BBA;
+    }
+    .zhytomyrska {
+        fill: #001E88;
+        stroke: #001E88;
+    }
+    .vinnytska path {
+        fill: #032BBA;
+        stroke: #032BBA;
+    }
+    .kyivska path {
+        fill: #010A2B;
+        stroke: #010A2B;
+    }
+    .kyiv path {
+        fill: #000E40;
+        stroke: #000E40;
+    }
+    .odeska path {
+        fill: #000E40;
+        stroke: #000E40;
+    }
+    .cherkaska path {
+        fill: #001E88;
+        stroke: #001E88;
+    }
+    .kirovogradska path {
+        fill: #001E88;
+        stroke: #001E88;
+    }
+    .mykolayivska path {
+        fill: #010A2B;
+        stroke: #010A2B;
+    }
+    .chernigivska path {
+        fill: #010A2B;
+        stroke: #010A2B;
+    }
+    .sumska path {
+        fill: #000E40;
+        stroke: #000E40;
+    }
+    .poltavska path {
+        fill: #001E88;
+        stroke: #001E88;
+    }
+    .dniprovska path {
+        fill: #001E88;
+        stroke: #001E88;
+    }
+    .khersonska path {
+        fill: #000;
+        stroke: #000;
+    }
+    .krym path {
+        fill: #000;
+        stroke: #000;
+    }
+    .kharkivska path {
+        fill: #010A2B;
+        stroke: #010A2B;
+    }
+    .zaporizka path {
+        fill: #000E40;
+        stroke: #000E40;
+    }
+    .donetska path {
+        fill: #000;
+        stroke: #000;
+    }
+    .lughanska path {
+        fill: #000;
+        stroke: #000;
+    }
+}

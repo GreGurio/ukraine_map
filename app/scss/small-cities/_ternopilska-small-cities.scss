@@ -1,0 +1,70 @@
+.kremenets {
+    top: 15px;
+    left: 64px;
+    &::after {
+        content: "Кременець";
+    }
+}
+.pochayiv {
+    top: 25px;
+    left: 53px;
+    &::after {
+        content: "Почаїв";
+    }
+}
+.lanivtsi {
+    top: 41px;
+    left: 90px;
+    &::after {
+        content: "Ланівці";
+    }
+}
+.zbarazh {
+    top: 59px;
+    left: 69px;
+    &::after {
+        content: "Збараж";
+    }
+}
+.berezhany {
+    top: 85px;
+    left: 9px;
+    &::after {
+        content: "Бережани";
+    }
+}
+.kozova {
+    top: 88px;
+    left: 23px;
+    &::after {
+        content: "Козова";
+    }
+}
+.terebovlya {
+    top: 101px;
+    left: 56px;
+    &::after {
+        content: "Теребовля";
+    }
+}
+.buchach {
+    top: 123px;
+    left: 36px;
+    &::after {
+        content: "Бучач";
+    }
+}
+.chortkiv {
+    top: 127px;
+    left: 61px;
+    &::after {
+        content: "Чортків";
+    }
+}
+.borshchiv {
+    top: 148px;
+    left: 84px;
+    &::after {
+        content: "Борщів";
+    }
+}

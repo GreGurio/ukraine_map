@@ -1,0 +1,209 @@
+.zakarpatska {
+    top: 354px;
+    left: 0;
+    &::after {
+        content: "Закарпатська область";
+        left: 40%;
+    }
+}
+.lvivska {
+    top: 188px;
+    left: 35px;
+    &::after {
+        content: "Львівська область";
+    }
+}
+.volynska {
+    top: 46px;
+    left: 100px;
+    &::after {
+        content: "Волинська область";
+        left: 55%;
+    }
+}
+.ivano-frankivska {
+    top: 307px;
+    left: 95px;
+    &::after {
+        content: "Івано-Франківська область";
+    }
+}
+.ternopilska {
+    top: 230px;
+    left: 176px;
+    &::after {
+        content: "Тернопільська область";
+        left: 45%;
+    }
+}
+.chernivetska {
+    top: 395px;
+    left: 191px;
+    &::after {
+        content: "Чернівецька область";
+        left: 40%;
+        top: 45%;
+    }
+}
+.rivnenska {
+    top: 48px;
+    left: 200px;
+    &::after {
+        content: "Рівненська область";
+        left: 60%;
+    }
+}
+.khmelnytska {
+    top: 193px;
+    left: 272px;
+    &::after {
+        content: "Хмельницька область";
+    }
+}
+.zhytomyrska {
+    top: 78px;
+    left: 345px;
+    &::after {
+        content: "Житомирська область";
+    }
+}
+.vinnytska {
+    top: 268px;
+    left: 357px;
+    &::after {
+        content: "Вінницька область";
+    }
+}
+.kyivska {
+    top: 96px;
+    left: 487px;
+    z-index: 1;
+    &::after {
+        content: "Київська область";
+    }
+}
+.kyiv {
+    top: 186px;
+    left: 548px;
+    path {
+        pointer-events: none;
+    }
+    svg path:hover {
+        transform: translate(0%,0%);
+    }
+    &::after {
+        content: none;
+    }
+}
+.odeska {
+    top: 442px;
+    left: 413px;
+    &::after {
+        content: "Одеська область";
+        left: 73%;
+        top: 45%;
+    }
+}
+.cherkaska {
+    top: 230px;
+    left: 509px;
+    &::after {
+        content: "Черкаська область";
+        left: 65%;
+    }
+}
+.kirovogradska {
+    top: 335px;
+    left: 520px;
+    &::after {
+        content: "Кіровоградська область";
+        left: 60%;
+    }
+}
+.mykolayivska {
+    top: 441px;
+    left: 550px;
+    &::after {
+        content: "Миколаївська область";
+        top: 45%;
+        left: 60%;
+    }
+}
+.chernigivska {
+    top: 0;
+    left: 572px;
+    &::after {
+        content: "Чернігівська область";
+    }
+}
+.sumska {
+    top: 0;
+    left: 737px;
+    &::after {
+        content: "Сумська область";
+        left: 50%;
+        top: 60%;
+    }
+}
+.poltavska {
+    top: 199px;
+    left: 679px;
+    &::after {
+        content: "Полтавська область";
+        left: 60%;
+    }
+}
+.dniprovska {
+    top: 343px;
+    left: 740px;
+    &::after {
+        content: "Дніпровська область";
+    }
+}
+.khersonska {
+    top: 507px;
+    left: 639px;
+    &::after {
+        content: "Херсонська область";
+        left: 60%;
+    }
+}
+.krym {
+    top: 642px;
+    left: 703px;
+    &::after {
+        content: "АР Крим";
+        left: 43%;
+    }
+}
+.kharkivska {
+    top: 211px;
+    left: 866px;
+    &::after {
+        content: "Харківська область";
+        left: 60%;
+    }
+}
+.zaporizka {
+    top: 452px;
+    left: 824px;
+    &::after {
+        content: "Запорізька область";
+        left: 55%;
+    }
+}
+.donetska {
+    top: 338px;
+    left: 981px;
+    &::after {
+        content: "Донецька область";
+        left: 55%;
+    }
+}
+.lughanska {
+    top: 250px;
+    left: 1071px;
+    &::after {
+        content: "Луганська область";
+    }
+}

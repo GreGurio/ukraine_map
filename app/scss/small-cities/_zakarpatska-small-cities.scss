@@ -1,0 +1,63 @@
+.pylypets {
+    top: 40px;
+    left: 76px;
+    &::after {
+        content: "Пилипець";
+    }
+}
+.polyana {
+    top: 49px;
+    left: 55px;
+    &::after {
+        content: "Поляна";
+    }
+}
+.svalyava {
+    top: 62px;
+    left: 55px;
+    &::after {
+        content: "Свалява";
+    }
+}
+.mukachevo {
+    top: 74px;
+    left: 42px;
+    &::after {
+        content: "Мукачево";
+    }
+}
+.berehove {
+    top: 91px;
+    left: 30px;
+    &::after {
+        content: "Берегове";
+    }
+}
+.vynogradiv {
+    top: 93px;
+    left: 58px;
+    &::after {
+        content: "Виноградів";
+    }
+}
+.hust {
+    top: 91px;
+    left: 74px;
+    &::after {
+        content: "Хуст";
+    }
+}
+.tyachiv {
+    top: 105px;
+    left: 96px;
+    &::after {
+        content: "Тячів";
+    }
+}
+.rihiv {
+    top: 96px;
+    left: 133px;
+    &::after {
+        content: "Рахів";
+    }
+}
